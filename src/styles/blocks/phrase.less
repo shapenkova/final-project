@@ -1,0 +1,30 @@
+.phrase {
+   position: relative;
+   display: block;
+   &__container {
+      position: absolute;
+      top: 4.2vw;
+      left: 16vw;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+   }
+   &__picture {
+      position: relative;
+      display: block;
+         &::before {
+         content: "";
+         display: block;
+         width: 100%;
+         padding-top: 37.174%;
+      }
+   }
+   &__picture-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1614px;
+      height: 600px;
+      object-fit: contain;
+   }
+}

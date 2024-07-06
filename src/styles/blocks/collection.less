@@ -1,0 +1,139 @@
+.collection {
+   .container();
+   display: flex;
+
+   &__wrapper {
+      position: relative;
+      display: grid;
+      margin-top: 90px;
+      gap: 0 130px;
+      grid-template-columns: 228px 1fr;
+      grid-template-rows: 590px auto;
+      grid-template-areas: 
+      'button  slider';
+   }
+   &__button {
+      grid-area: button;
+      align-self: flex-end;
+      margin-left: 5px;
+   }
+   &__swiper {
+      grid-area: slider;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      margin-top: 25px;
+      
+   }
+
+   &__button-desc {
+      margin: 0;
+      color: @black;
+      font-family: @font1;
+      font-size: 18px;
+      font-weight: @font_weight2;
+      line-height: 1.388;
+   }
+   &__button-year {
+      margin-left: 20px;
+      font-family: @font4;
+      font-size: 60px;
+      font-weight: @font_weight5;
+      letter-spacing: 0.05em;
+   }
+   &__button-look {
+      display: inline-block;
+      box-sizing: border-box;
+      width: 228px;
+      height: 52px;
+      margin-top: 12px;
+      padding: 15px 10px;
+      border: none;
+      background-color: @blue;
+      color: @white;
+      font-family: @font1;
+      font-size: 18px;
+      font-weight: @font_weight4;
+      line-height: 1.388;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.2s;
+      cursor: pointer;
+      &:hover {
+         background-color:@hover_bl;
+      }
+   }
+}
+.swiper-header {
+   display: flex;
+   align-items: flex-start;
+   width: 232px;
+   max-width: 100%;
+   gap: 30px;
+   margin-top: 5px;
+   margin-left: 230px;
+}
+.swiper-btn {
+   box-sizing: border-box;
+   display: inline-block;
+   width: 20px;
+   padding: 0;
+   border: none;
+   background-color: transparent;
+   color: @black;
+   font-family: @font4;
+   font-size: 22px;
+   font-weight: @font_weight3;
+   letter-spacing: 0.05em;
+   text-decoration: none;
+   white-space: nowrap;
+   transition: color 0.2s, font-size 0.2s, font-weight 0.2s;
+   cursor: pointer;
+   &:hover {
+      color:  @green;
+      font-size: 30px;
+      font-weight: @font_weight5;
+   }
+}
+
+.swiper-slide {
+   &:nth-child(1) {
+      display: none;
+   }
+   &:nth-child(2) {
+      display: none;
+   }
+   &:nth-child(4) {
+      display: none;
+   }
+   &:nth-child(5) {
+      display: none;
+   }
+}
+
+.t-letter {
+   position: relative;
+   width: 30px; /* Ширина буквы "Т" */
+   height: 60px; /* Высота буквы "Т" */
+}
+
+.t-letter::before, .t-letter::after {
+   content: "";
+   position: absolute;
+   background-color: black;
+}
+
+.t-letter::before {
+   width: 200px;
+   height: 1px; /* Высота горизонтальной линии */
+   top: 0;
+   left: 5px;
+}
+
+.t-letter::after {
+   width: 1px; /* Ширина вертикальной линии */
+   height: 100%;
+   top: 0;
+   left: 30%; /* Смещение горизонтальной линии влево */
+}

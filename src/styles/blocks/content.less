@@ -1,0 +1,83 @@
+.content {
+   .container();
+   display: flex;
+   flex-direction: column;
+   color: @black;
+   font-family: @font1;
+   font-size: 18px;
+   font-weight: @font_weight2;
+   font-style: normal;
+   line-height: 1.388;
+   word-wrap: break-word;
+
+   h4 {
+      margin: 60px 0 30px 0;
+      color: @black;
+      font-family: @font1;
+      font-size: 18px;
+      font-weight: @font_weight4;
+   }
+   h2 {
+      margin: 70px 0 30px 0;
+      color: @black;
+      font-family: @font4;
+      font-size: 40px;
+      font-weight: @font_weight5;
+      letter-spacing: 0.05em;
+   }
+
+   p {
+      width: 100%;
+      max-width: 539px;
+      margin: 0 0 40px 0;
+      font-family: @font1;
+   }
+   ul,
+   ol {
+      position: relative;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-family: @font1;
+   }
+   ul > li {
+      box-sizing: border-box;
+      position: relative;
+      padding-left: 15px;
+      &::before {
+         content: "";
+         display: block;
+         position: absolute;
+         top: 9px;
+         left: 0;
+         width: 5px;
+         height: 5px;
+         border-radius: 50%;
+         background-color: @blue;
+         pointer-events: none;
+      }
+   }
+   ol {
+      counter-reset: li;
+      padding: 0;
+   }
+   ol > li {
+      counter-increment: li;
+      &::before {
+         content: counter(li) + ". ";
+         box-sizing: border-box;
+         display: inline-block;
+         min-width: 20px;
+         color: @black;
+         white-space: pre;
+      }
+   }
+   ul > li,
+   ol > li {
+      margin: 0 0 10px;
+      cursor: default;
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+}

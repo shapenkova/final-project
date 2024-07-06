@@ -1,0 +1,166 @@
+<div class="filter" id="js-filter">
+   <div class="filter__container">
+      <form class="filter__form form" id="js-filterForm">
+         <div class="form__list">
+            <div class="form__section">
+               <h6 class="form__list-title">Коллекция</h6>
+               <div class="field__check check">
+                  <label class="check__item">
+                     <input 
+                        class="check__input" 
+                        type="checkbox" 
+                        name="collection" 
+                        value="1982" 
+                     />
+                     <span class="check__mark"></span>
+                     <span class="check__label">1982 года</span>
+                  </label>
+                  <label class="check__item">
+                     <input 
+                        class="check__input" 
+                        type="checkbox" 
+                        name="collection" 
+                        value="1986"
+                        checked
+                     />
+                     <span class="check__mark"></span>
+                     <span class="check__label">1986 года</span>
+                  </label>
+                  <label class="check__item">
+                     <input 
+                        class="check__input" 
+                        type="checkbox" 
+                        name="collection" 
+                        value="1987"
+                        checked
+                     />
+                     <span class="check__mark"></span>
+                     <span class="check__label">1987 года</span>
+                  </label>
+                  <label class="check__item">
+                     <input 
+                        class="check__input" 
+                        type="checkbox" 
+                        name="collection" 
+                        value="1988"
+                     />
+                     <span class="check__mark"></span>
+                     <span class="check__label">1988 года</span>
+                  </label>
+                  <label class="check__item">
+                     <input 
+                        class="check__input" 
+                        type="checkbox" 
+                        name="collection" 
+                        value="1989"
+                     />
+                     <span class="check__mark"></span>
+                     <span class="check__label">1989 года</span>
+                  </label>
+               </div>
+            </div>
+            <div class="form__available">
+               <h6 class="form__list-title form__available-title" id="title-available">Наличие</h6>
+               <div class="field__radio radio">
+                  <label class="radio__item">
+                     <input 
+                        class="radio__input" 
+                        type="radio" 
+                        name="available" 
+                        value="existing" 
+                        checked
+                     />
+                     <span class="radio__mark"></span>
+                     <span class="radio__label">В наличие</span>
+                  </label>
+                  <label class="radio__item">
+                     <input 
+                        class="radio__input" 
+                        type="radio" 
+                        name="available" 
+                        value="order"
+                     />
+                     <span class="radio__mark"></span>
+                     <span class="radio__label">Под заказ</span>
+                  </label>
+                  <label class="radio__item">
+                     <input 
+                        class="radio__input" 
+                        type="radio" 
+                        name="available" 
+                        value="all"
+                     />
+                     <span class="radio__mark"></span>
+                     <span class="radio__label">Всё</span>
+                  </label>
+               </div>
+            </div>
+            <div class="form__orientation">
+               <h6 class="form__list-title">Ориентация</h6>
+               <div class="field__check check">
+                  <label class="check__item">
+                     <input 
+                        class="check__input" 
+                        type="checkbox" 
+                        name="orientation" 
+                        value="library" 
+                        checked
+                     />
+                     <span class="check__mark"></span>
+                     <span class="check__label">Книжная</span>
+                  </label>
+                  <label class="check__item">
+                     <input 
+                        class="check__input" 
+                        type="checkbox" 
+                        name="orientation" 
+                        value="landscape"
+                        checked
+                     />
+                     <span class="check__mark"></span>
+                     <span class="check__label">Альбомная</span>
+                  </label>
+               </div>
+            </div>
+            <div class="form__price">
+               <h6 class="form__list-title">Цена, &#8381;</h6>
+
+               <div class="form__price-slider" id="range-slider"></div>
+						<div class="form__price-inputs">
+							<label class="form__price-label">
+								<span class="form__price-text">от</span>
+								<input 
+                           type="number" 
+                           min="650" 
+                           max="5000" 
+                           placeholder="650" 
+                           class="form__price-input" 
+                           id="input-0"
+                        >
+							</label>
+							<label class="form__price-label">
+								<span class="form__price-text">до</span>
+								<input 
+                           type="number" 
+                           min="650" 
+                           max="5000" 
+                           placeholder="5000" 
+                           class="form__price-input" 
+                           id="input-1"
+                        >
+							</label>
+						</div>
+               </div>
+         </div>
+
+         <div class="form__btns">
+            <button type="button" class="form__apply form__apply--w50">
+               Применить
+            </button>
+            <button type="reset" class="form__reset-btn js-resetBtn">
+               Сбросить
+            </button>
+         </div>
+      </form>
+   </div>
+</div>

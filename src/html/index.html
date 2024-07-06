@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   @@include('blocks/head.html')
+</head>
+<body>
+   <!-- Шапка сайта -->
+   @@include('blocks/page-header.html')
+   <!-- Основное содержимое страницы -->
+   <main class="main">
+      <div class="main__container">
+         <!-- Фраза: А нет показалось -->
+         @@include('blocks/phrase.html')
+         <!-- Слайдер-коллекция -->
+         @@include('blocks/collection.html')
+         <!-- Статья -->
+         @@include('blocks/story.html')
+         <!-- Постеры (слайдер)-->
+         @@include('blocks/posters.html')
+         <!-- Адресса магазинов + карта -->
+         @@include('blocks/address.html')
+      </div>
+   </main>
+   <!-- Подвал сайта -->
+   @@include('blocks/page-footer.html')
+   <!-- Скрипты -->
+   <script src="scripts/jquer-3.7.1.min.js"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+   <script src="scripts/main.js"></script>
+</body>
+</html>

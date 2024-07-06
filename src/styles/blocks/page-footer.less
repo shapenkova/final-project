@@ -1,0 +1,293 @@
+.page-footer {
+   @media @bw1660 {
+      margin-top: 5px;
+   }
+   @media @bw768 {
+      margin-top: 0;
+   }
+   &__line {
+      position: relative;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 120px;
+      background-color: @red_bg;
+      overflow: hidden;
+      @media @bw1020 {
+         height: 85px;
+      }
+      @media @bw768 {
+         height: 70px;
+      }
+      
+      
+   }
+   // &__logo-picture {
+   //    display: block;
+   //    width: 100%;
+   //    margin: 0 auto;
+   //    font-size: 0;
+   //    &::after {
+   //       content: "";
+   //       display: block;
+   //       width: 100%;
+   //    }
+   // }
+   &__logo-img {
+      @media @bw1020 {
+         width: 55px;
+         height: 47px;
+      }
+      @media @bw768 {
+         width: 57px;
+         height: 47px;
+      }
+   }
+   &__logo-desc {
+      margin-top: 5px;
+      color: @black;
+      font-family: @font3;
+      font-size: 10px;
+      font-weight: @font_weight5;
+      text-align: center;
+      text-transform: uppercase;
+      @media @bw1020 {
+         margin-top: 2px;
+         font-size: 7px;
+      }
+      @media @bw768 {
+         margin-top: 2px;
+         font-size: 7px;
+      }
+   }
+   &__container {
+      .container();
+      display: flex;
+      flex-direction: column;
+      padding-top: 62px;
+      padding-bottom: 50px;
+      @media @bw1020 {
+         padding-top: 55px;
+         padding-bottom: 42px;
+      }
+      @media @bw768 {
+         padding-top: 50px;
+         padding-bottom: 40px;
+      }
+   }
+   &__main {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+   }
+   &__info {
+      display: flex;
+      gap: 174px;
+      @media @bw1660 {
+         gap: 142px;
+      }
+      @media @bw1020 {
+         gap: 139px;
+      }
+      @media @bw768 {
+         flex-direction: column;
+         gap: 40px;
+      }
+   }
+   &__title {
+      margin: 0;
+      color: @black;
+      font-family: @font1;
+      font-size: 18px;
+      font-weight: @font_weight4;
+      line-height: 1.388;
+      @media @bw1020 {
+         font-size: 16px;
+         line-height: 1.56;
+      }
+      @media @bw768 {
+         font-size: 16px;
+         line-height: 1.56;
+      }
+   }
+   &__title-right {
+      text-align: right;
+   }
+   &__nav {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      margin-top: 32px;
+      @media @bw768 {
+         margin-top: 24px;
+      }
+
+   }
+   &__nav-link {
+      margin-bottom: 16px;
+      color: @black;
+      font-family: @font1;
+      font-size: 18px;
+      font-weight: @font_weight3;
+      line-height: 1.388;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+      &:last-child {
+         margin-bottom: 0;
+      }
+      &:hover {
+         color: @blue;
+      }
+      @media @bw1020 {
+         margin-bottom: 20px;
+         font-size: 16px;
+         line-height: 1.56;
+      }
+      @media @bw768 {
+         margin-bottom: 20px;
+         font-size: 14px;
+         line-height: 1.79;
+         white-space: nowrap;
+      }
+   }
+   &__social {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+   }
+   &__social-icon {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      @media @bw768 {
+         flex-direction: column;
+         gap: 24px;
+         margin-top: 24px;
+         margin-left: 25px;
+      }
+   }
+   &__social-icon-link {
+      box-sizing: border-box;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      margin-left: 30px;
+      text-decoration: none;
+      cursor: pointer;
+      &:first-child {
+         margin-left: 0;
+      }
+      @media @bw768 {
+         margin-left: 0;
+      }
+   }
+   &__social-icon-svg1 {
+      width: 24px;
+      height: 24px;
+      color: @white;
+   }
+   &__social-icon-svg2 {
+      width: 24px;
+      height: 24px;
+      color: @white;
+   }
+   &__social-icon-svg3 {
+      width: 23px;
+      height: 13px;
+      color: @white;
+   }
+   &__vault {
+      box-sizing: border-box;
+      display: flex;
+      margin-top: 55px;
+      @media @bw1020 {
+         margin-top: 42px;
+      }
+      @media @bw768 {
+         margin-top: 40px;
+      }
+   }
+   &__terms1 {
+      display: flex;
+      justify-content: space-between;
+      width: 400px;
+      @media @bw1660 {
+         width: 368px;
+      }
+      @media @bw1020 {
+         width: 339px;
+      }
+      @media @bw768 {
+         flex-direction: column;
+         gap: 18px;
+      }
+   }
+   &__terms1-link {
+      box-sizing: border-box;
+      display: inline-block;
+      color: @black;
+      font-family: @font1;
+      font-size: 16px;
+      font-weight: @font_weight4;
+      line-height: 1.375;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.2s;
+      cursor: pointer;
+      &:hover {
+         color: @blue;
+      }
+      @media @bw1020 {
+         font-size: 14px;
+      }
+      @media @bw768 {
+         font-size: 14px;
+      }
+   }
+   // &__terms2 {
+   //    box-sizing: border-box;
+   //    display: flex;
+   // }
+   // &__terms2-link {
+   //    box-sizing: border-box;
+   //    display: flex;
+   //    align-items: baseline;
+   //    margin: 0;
+   //    color: @black;
+   //    font-family: @font1;
+   //    font-size: 16px;
+   //    font-weight: @font_weight4;
+   //    line-height: 1.375;
+   //    text-decoration: none;
+   //    white-space: nowrap;
+   //    transition: color 0.2s;
+   //    cursor: pointer;
+   //    &:hover {
+   //       color: @blue;
+   //    }
+   // }
+   // &__terms2-svg {
+   //    align-self: center;
+   //    width: 56px;
+   //    height: 17px;
+   //    margin-left: 15px;
+   // }
+}
+.social {
+   &--goluboy {
+      background-color: @goluboy;
+   }
+   &--green {
+      background-color: @green;
+   }
+   &--blue {
+      background-color: @blue;
+   }
+}

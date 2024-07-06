@@ -1,0 +1,113 @@
+.address {
+   box-sizing: border-box;
+   width: 100%;
+   max-width: 1490px;
+   display: flex;
+   flex-direction: column;
+   margin: 0 auto;
+   padding-right: 45px;
+   padding-top: 100px;
+   padding-bottom: 150px; //проверить по отступам
+   &__title {
+      margin: 0 auto;
+      padding-left: 40px;
+   }
+   &__wrapper {
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+   }
+   .wrapper-content {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+   }
+   &__box1 {
+      max-width: 204px;
+      padding: 30px 0 30px 40px;
+   }
+   &__box2 {
+      max-width: 258px;
+      padding: 20px 0 30px 40px;
+   }
+   &__wrapper-box {
+      margin-top: 52px;
+      margin-bottom: 40px;
+      width: 361px;
+      height: 259px;
+      border-left: 6px solid transparent;
+      cursor: pointer;
+      transition:  background-color 0.2s, box-shadow 0.2s, border-left-color 0.3s;
+      &:last-child {
+         margin-top: 0;
+         margin-bottom: 0;
+      }
+      &:hover {
+         border-left-color: @green;
+         background-color: @gray_bg;
+         box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
+      }
+   }
+}
+.info-card {
+   &__title {
+      margin: 0 0 20px 0;
+      color: @black;
+      font-family: @font4;
+      font-size: 40px;
+      font-weight: @font_weight5;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      word-wrap: none;
+   }
+   &__desc {
+      margin: 0;
+      color: @black;
+      font-family: @font1;
+      font-size: 18px;
+      font-weight: @font_weight2;
+      line-height: 1.388;
+   }
+   &__desc-weight {
+      font-weight: @font_weight4;
+   }
+   &__desc-sing {
+      color: @gray_sign;
+   }
+   &__timetable {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 183px;
+      margin: 20px 0 0 0;
+      color: @black;
+      font-family: @font1;
+      font-size: 18px;
+      font-weight: @font_weight2;
+      line-height: 1.388;
+   }
+   &__timetable-desc {
+      margin: 0;
+   }
+   &__timetable-svg {
+      width: 11px;
+      height: 11px;
+   }
+}
+#js-contactsMap {
+   width: 862px;
+   height: 623px;
+   @media @bw1020 {
+      width: 708px;
+      height: 463px;
+      margin-bottom: 100px;
+      order: -1;
+   }
+   @media @bw768 {
+      width: 280px;
+      height: 186px;
+      margin-bottom: 59px;
+      order: -1;
+   }
+}
