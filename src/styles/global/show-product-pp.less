@@ -1,0 +1,65 @@
+.pp {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 110;
+   box-sizing: border-box;
+   display: none;
+   background-color: rgba(17, 17, 17, 0.3);
+   padding: 75px 95px 75px;
+   overflow-y: auto;
+   @media @bw1020 {
+      padding: 90px 40px 50px;
+   }
+   @media @bw768 {
+      padding: 80px 20px 40px;
+   }
+   &__container {
+      position: relative;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 810px;
+      margin: auto;
+      padding: 67px;
+      background-color: #f3f3f3;
+   }
+   
+   &__picture-box {
+      width: 100%;
+      max-width: 676px;
+      border: 1px solid @gray_sign;
+   }
+   &__picture {
+      position: relative;
+      display: block;
+      margin: 42px 45px;
+      width: 585px;
+      font-size: 0;
+      text-decoration: none;
+      overflow: hidden;
+      &::after {
+         content: "";
+         display: block;
+         width: 100%;
+         padding-top: 101%;
+      }
+   }
+   &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+   }
+   &__x-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+   }
+}
