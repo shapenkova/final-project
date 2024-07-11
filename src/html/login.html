@@ -9,147 +9,133 @@
    <!-- Основное содержимое страницы -->
    <main class="main">
       <div class="main__container">
-         <!-- <section class="text-seem">
-            <div class="text-seem__wrapper">
-               <div class="text-seem__box1"></div>
-               <div class="text-seem__box2"></div>
-               
-            </div>
-            <div class="text-seem__box3"></div>
-         </section> -->
          <section class="login">
-            <div class="login__conrainer">
+            <div class="login__container">
                <h2 class="login__title section-title">Регистрация</h2>
                <div class="login__desc">
                   <p class="login__desc-text">Уже есть авторизованный аккаунт?</p>
                   <a href="#" class="login__link">Войти</a>
                </div>
                <div class="login__wrapper">
-                  <form class="login__form form">
-                     <div class="form__list">
-                        <div class="form__group">
-                           <label class="field form__field">
-                              <span class="field__label">Email*</span>
-                              <input 
-                                 class="field__input" 
-                                 type="email" 
-                                 placeholder="Введи свой e-mail" 
-                                 name="email" 
-                                 required 
-                              />
-                           </label>
-                           <label class="field form__field">
-                              <span class="field__label">Имя*</span>
-                              <input 
-                                 class="field__input" 
-                                 type="text" 
-                                 placeholder="Укажи имя" 
-                                 name="name" 
-                                 required 
-                              />
-                           </label>
+                  <form class="login__form form" id="js-LoginForm">
+
+                     <div class="form__box">
+                        <label class="field form__field form__field--w50">
+                           <span class="field__label field__label--red">E-mail</span>
+                           <input 
+                              class="field__input" 
+                              type="email" 
+                              placeholder="Введи свой e-mail" 
+                              name="email" 
+                              required 
+                           />
+                        </label>
+                        <label class="field form__field form__field--w50 form__field1">
+                           <span class="field__label field__label--red">Имя</span>
+                           <input 
+                              class="field__input" 
+                              type="text" 
+                              placeholder="Укажи имя" 
+                              name="name" 
+                              required 
+                           />
+                        </label>
+                        <label class="field form__field form__field--w50 ">
+                           <span class="field__label">Телефон</span>
+                           <input 
+                              class="field__input js-mobileMask" 
+                              type="tel" 
+                              placeholder="Укажи свой телефон" 
+                              name="phone"
+                           />
+                        </label>
+                        <label class="field form__field form__field--w50 form__field1">
+                           <span class="field__label">Фамилия</span>
+                           <input 
+                              class="field__input" 
+                              type="text" 
+                              placeholder="Укажи фамилию" 
+                              name="last_name" 
+                           />
+                        </label>
+                     </div>
+
+                     <div class="form__box">
+                        <label class="field form__field form__field--w50">
+                           <span class="field__label field__label--red">Пароль</span>
+                           <input 
+                              class="field__input" 
+                              type="email" 
+                              placeholder="Придумай пароль" 
+                              name="password" 
+                              required 
+                           />
+                        </label>
+                        <label class="field form__field form__field--w50">
+                           <span class="field__label field__label--red">Подтверждение пароля</span>
+                           <input 
+                              class="field__input" 
+                              type="text" 
+                              placeholder="Повтори пароль" 
+                              name="password" 
+                              required 
+                           />
+                        </label>
+                     </div>
+
+                     <div class="form__box">
+                        <div class="form__field field  form__group--w50">
+                           <h6 class="field__title">Страна</h6>
+                           <select 
+                              class="field__select js-selectric" 
+                              name="amount"
+                           >
+                              <option value="">Россия</option>
+                              <option value="">до 20 человек</option>
+                              <option value="">от 20 до 100 человек</option>
+                              <option value="">от 100 до 500 человек</option>
+                              <option value="">более 500 человек</option>
+                           </select>
                         </div>
-                        <div class="form__group">
-                           <label class="field form__field form__field--w50">
-                              <span class="field__label">Пароль*</span>
-                              <input 
-                                 class="field__input" 
-                                 type="email" 
-                                 placeholder="Придумай пароль" 
-                                 name="email" 
-                                 required 
-                              />
-                           </label>
-                           <label class="field form__field form__field--w50">
-                              <span class="field__label">Подтверждение пароля*</span>
-                              <input 
-                                 class="field__input" 
-                                 type="text" 
-                                 placeholder="Повтори пароль" 
-                                 name="name" 
-                                 required 
-                              />
-                           </label>
-                        </div>
-                        <div class="form__group">
-                           <label class="field form__field form__field--w50">
-                              <span class="field__label">Телефон*</span>
-                              <input 
-                                 class="field__input js-mobileMask" 
-                                 type="tel" 
-                                 placeholder="Укажи свой телефон" 
-                                 name="phone" 
-                                 required 
-                              />
-                           </label>
-                           <label class="field form__field form__field--w50">
-                              <span class="field__label">Фамилия*</span>
-                              <input 
-                                 class="field__input" 
-                                 type="text" 
-                                 placeholder="Фамилия" 
-                                 name="last_name" 
+                        <div class="form__field field js-dateField form__group--w50">
+                           <h6 class="field__title">Дата рождения</h6>
+                           <div class="field__date">
+                              <div class="field__date-inputs">
+                                 <input
+                                    class="field__date-input js-dateDay"
+                                    type="text"
+                                    placeholder="дд"
+                                    readonly
+                                 />
+                                 <input
+                                    class="field__date-input js-dateMonth"
+                                    type="text"
+                                    placeholder="мм"
+                                    readonly
+                                 />
+                                 <input
+                                    class="field__date-input field__date-input--year js-dateYear"
+                                    type="text"
+                                    placeholder="гг"
+                                    readonly
+                                 />
+                              </div>
+                              <input
+                                 class="field__date-picker js-dateInput"
+                                 type="text"
+                                 name="date"
+                                 readonly
                                  required
                               />
-                           </label>
-                        </div>
-                        
-                        <div class="form__group form__group--w50">
-                           <div class="form__field field ">
-                              <h6 class="field__title">Страна</h6>
-         
-                              <select 
-                                 class="field__select js-selectric" 
-                                 name="amount"
-                              >
-                                 <option value="20"></option>
-                                 <option value="20">до 20 человек</option>
-                                 <option value="100">от 20 до 100 человек</option>
-                                 <option value="500">от 100 до 500 человек</option>
-                                 <option value="1000">более 500 человек</option>
-                              </select>
                            </div>
-         
-                           <div class="form__field field js-dateField">
-                              <h6 class="field__title">Дата рождения</h6>
-                              <div class="field__date">
-                                 <div class="field__date-inputs">
-                                    <input
-                                       class="field__date-input js-dateDay"
-                                       type="text"
-                                       placeholder="ДД"
-                                       readonly
-                                    />
-                                    <input
-                                       class="field__date-input js-dateMonth"
-                                       type="text"
-                                       placeholder="ММ"
-                                       readonly
-                                    />
-                                    <input
-                                       class="field__date-input field__date-input--year js-dateYear"
-                                       type="text"
-                                       placeholder="ГГГГ"
-                                       readonly
-                                    />
-                                 </div>
-                                 <!-- <input
-                                    class="field__date-picker js-dateInput"
-                                    type="text"
-                                    name="date"
-                                    readonly
-                                    required
-                                 />
-                                 </div> -->
-                           </div>
-                        </div>
-                     
 
+                        </div>   
                      </div>
+                        
                      <div class="form__check check">
-                        <label class="check__item">
+                        <label class="check__item field--err">
                            <input 
-                              id="form__check-pp" 
+                              id="form__check" 
                               type="checkbox" 
                               name="agree" 
                               class="check__input" 
@@ -157,19 +143,19 @@
                               checked
                            />
                            <span class="check__mark login__form-mark"></span>
-                           <span class="check__label">
-                              Нажимая «Создать аккаунт», я подтверждаю, что ознакомился с положениями, указанными в статьях <a href="#" class="check__link">Условия использования</a> и 
+                           <span class="check__label check__label-text">
+                              Нажимая «Создать аккаунт», я подтверждаю, что ознакомился с положениями, указанными в статьях 
+                              <a href="#" class="check__link">Условия использования</a> и 
                               <a href="#" class="check__link">Политика конфиденциальности.</a>
                            </span>
                         </label>
                      </div>
                      <div class="form__btn">
-                        <button type="submit" class="form__btn-create">
+                        <button type="submit" class="form__btn-create" id="jsFormCreateBtn">
                            Создать аккаунт
                         </button>
                      </div>
                   </form>
-                  
                </div>
             </div>
          </section>
@@ -179,6 +165,11 @@
    @@include('blocks/page-footer.html')
    <!-- Скрипты -->
    <script src="scripts/jquery-3.7.1.min.js"></script>
+   <script src="scripts/jquery.validate.js"></script>
+   <script src="scripts/jquery.validate-init.js"></script>
+   <script src="scripts/jquery.selectric.min.js"></script>
+   <script src="scripts/jquery.mask.min.js"></script>
+   <script src="scripts/air-datepicker.js"></script>
    <script src="scripts/main.js"></script>
 </body>
 </html>
