@@ -1,5 +1,7 @@
 .selectric-wrapper {
    position: relative;
+   width: 100%;
+   transition: background-color 0.2s, border 0.2s, border-bottom 0.2s, width 0.2s, right 0.2s;
    &::after,
    &::before {
       content: "";
@@ -26,7 +28,16 @@
          right: 17px;
       }
    }
+   &:hover {
+      background-color: @gray_bg;
+      border: none;
+      border-bottom: 1px solid @gray_sign;
+      width: 100%;
+      min-width: 481px;
+      right: 10px;
+   }
 }
+
 .selectric-open {
    z-index: 10;
    &.selectric-wrapper {
@@ -43,6 +54,7 @@
       width: 100% !important;
    }
 }
+
 .selectric {
    height: 34px;
    border: none;
@@ -63,20 +75,21 @@
       @media @bw400 {
          font-size: 14px;
       }
+      
    }
 } 
 .selectric-items  {
-   border-radius: 5px;
+   border-radius: none;
    border: none;
-   background-color: @white;
-   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+   background-color: @gray_bg;
+   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
    overflow: hidden;
    & .selectric-scroll {
       overflow-x: hidden;
       overflow-y: auto;
    }
    & li {
-      padding: 10px 23px;
+      padding: 15px 20px;
       font-size: 16px;
       &::before {
          background-color: transparent;
@@ -84,5 +97,16 @@
       @media @bw400 {
          font-size: 14px;
       }
+      &:hover{
+         background: @blue_hover;
+         color: @blue;
+      }
    }
+   &:hover {
+      margin-top: 0;
+   }
+}
+.selectric-items li.highlighted {
+   background: @blue_hover;
+   color: @blue;
 }
