@@ -338,16 +338,18 @@
          nativeOnMobile: false
    });
 
+   // var scrollContainer = document.querySelector('.scrollbarContainer');
+   // if (scrollContainer) {
+   //    new SimpleBar(scrollContainer, { autoHide: false });
+   // }
+   
    $.get('ajax.html', function(data) {
       $('#ajax').append(data).selectric({
          maxHeight: 200
       }
       );
    });
-   $('select').selectric({
-      
-   });
-
+   
    //календарь
    const dateField = $(".js-dateField");
    if (dateField.length) {
