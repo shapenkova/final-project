@@ -9,7 +9,23 @@
    });
 
    //слайдер
-   
+   const swipers1 = document.querySelectorAll(".js-swiper1");
+      swipers1.forEach(function (swpr) {
+         new Swiper(swpr, {
+            updateOnWindowResize: true,
+            slidesPerView:  2,
+            loop: true,
+            spaceBetween: 30,
+            grabCursor: true,
+            pagination: {
+               el: ".swiper-pagination",
+               clickable: true,
+               renderBullet: function (index, className) {
+               return '<span class="' + className + '">' + (index + 85) + "</span>";
+            },
+         }
+      });
+   });
 
 
    //карта
@@ -338,10 +354,10 @@
          nativeOnMobile: false
    });
 
-   // var scrollContainer = document.querySelector('.scrollbarContainer');
-   // if (scrollContainer) {
-   //    new SimpleBar(scrollContainer, { autoHide: false });
-   // }
+   var scrollContainer = document.querySelector('.scrollbarContainer');
+   if (scrollContainer) {
+      new SimpleBar(scrollContainer, { autoHide: false });
+   }
    
    $.get('ajax.html', function(data) {
       $('#ajax').append(data).selectric({
@@ -372,10 +388,30 @@
       };
       new AirDatepicker(dateInput[0], dateConfig);
       
-   };
-   $.each(dateField, function (i) {
-      pickerInit($(this));
-   });
+      };
+      $.each(dateField, function (i) {
+         pickerInit($(this));
+      });
+      }
    }
-}
+
+   const item1 = $(".nav-icon1");
+   const item2 = $(".nav-icon2");
+   
+   if (item1.length) {
+      item1.on("mouseover", function() {
+         item1.css("fill", "#0154bb");
+      });
+      item1.on("mouseout", function() {
+         item1.css("fill", "");
+      });
+   }
+   if (item2.length) {
+      item2.on("mouseover", function() {
+         item2.css("fill", "#0154bb"); 
+      });
+      item2.on("mouseout", function() {
+         item2.css("fill", "");
+      });
+   }
 }) ();

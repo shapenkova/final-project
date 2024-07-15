@@ -17,11 +17,9 @@
       align-self: flex-end;
       margin-left: 5px;
    }
-   &__swiper {
+   &__swiper1 {
       grid-area: slider;
       display: flex;
-      justify-content: space-between;
-      flex-direction: row-reverse;
       margin-top: 25px;
       
    }
@@ -112,28 +110,3 @@
 //    }
 // }
 
-.t-letter {
-   position: relative;
-   width: 30px; /* Ширина буквы "Т" */
-   height: 60px; /* Высота буквы "Т" */
-}
-
-.t-letter::before, .t-letter::after {
-   content: "";
-   position: absolute;
-   background-color: black;
-}
-
-.t-letter::before {
-   width: 200px;
-   height: 1px; /* Высота горизонтальной линии */
-   top: 0;
-   left: 5px;
-}
-
-.t-letter::after {
-   width: 1px; /* Ширина вертикальной линии */
-   height: 100%;
-   top: 0;
-   left: 30%; /* Смещение горизонтальной линии влево */
-}

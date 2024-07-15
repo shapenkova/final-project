@@ -39,8 +39,8 @@
       width: 100%;
       max-width: 1480px;
       margin: 0 auto;
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 35px;
+      padding-right: 35px;
       @media @bw1660 {
          padding-left: 35px;
          padding-right: 35px;
@@ -92,32 +92,26 @@
       }
    }
    &__logo {
-      flex-shrink: 0;
       position: relative;
       z-index: 1;
-      display: flex;
-      width: 74px;
-      height: 80px;
-      margin: 5px 0 0 66px;
-      font-size: 0;
-      text-decoration: none;
-      @media @bw1020 {
-         width: 55px;
-         height: 59px;
-         margin: 5px 45px 0 0;
-      }
-      @media @bw768 {
-         width: 55px;
-         height: 59px;
-         margin-top: 0;
-         margin-right: 60px;
-      }
-   }
-   &__logo-link {
+      flex-shrink: 0;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 74px;
+      margin: 7px 0 0 66px;
+      font-size: 0;
+      text-decoration: none;
+      @media @bw1020 {
+         width: 55px;
+         margin: 5px 45px 0 0;
+      }
+      @media @bw768 {
+         width: 55px;
+         margin-top: 0;
+         margin-right: 60px;
+      }
    }
    &__logo-desc {
       margin-top: 5px;
@@ -125,37 +119,48 @@
       font-family: @font3;
       font-size: 10px;
       font-weight: @font_weight5;
+      letter-spacing: 0.02em;
       text-align: center;
       text-transform: uppercase;
       @media @bw1020 {
-         margin-top: 2px;
+         margin-top: 4px;
          font-size: 7px;
       }
       @media @bw768 {
-         margin-top: 2px;
+         margin-top: 4px;
          font-size: 7px;
       }
    }
    &__logo-picture {
       display: block;
       position: relative;
-      width: 100%;
+      width: 74px;
       margin: 0;
       font-size: 0;
       text-decoration: none;
       overflow: hidden;
       background-color: @red_bg;
-
       &::after {
          content: "";
          display: block;
          width: 100%;
+         padding-top: 85.135%;
       }
       @media @bw1020 {
-         
+         width: 55px;
+         &::after {
+            padding-top: 83.636%;
+         }
       }
    }
    &__logo-img {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       @media @bw1020 {
          width: 55px;
          height: 47px;
@@ -174,22 +179,19 @@
          width: 100%;
          height: 100vh;
          flex-direction: column;
+         justify-content: flex-start;
          align-items: flex-start;
-         gap: 30px;
+         gap: 32px;
          padding: 140px 30px 30px;
-         background-color: fade(@gray_bg, 98%);
+         background-color: @gray_bg;
          transition: transform 0.4s;
          transform: translateX(-100%);
          overflow-x: hidden;
          overflow-y: auto;
-         // @supports (backdrop-filter: blur(20px)) {
-         //    background-color: fade(@gray, 70%);
-         //    backdrop-filter: blur(20px);
-         // }
       }
       @media @bw768 {
          gap: 32px;
-         padding: 130px 20px 20px;
+         padding: 128px 20px 20px;
       }
    }
    &__nav-link {
@@ -203,7 +205,7 @@
       line-height: 1.388;
       text-decoration: none;
       transition: color 0.2s;
-
+      cursor: pointer;
       @media @bw1020 {
          font-size: 16px;
          line-height: 1.375;
@@ -212,9 +214,11 @@
          font-size: 14px;
          line-height: 1.214;
       }
-      
+      &:hover {
+         color: @hover_bl;
+      }
    }
-   &__nav-deck {
+   &__nav-desc {
       display: none;
       @media @bw1020 {
          display: block;
@@ -224,15 +228,23 @@
          font-size: 16px;
          font-weight: @font_weight2;
          line-height: 1.375;
+         transition: color 0.2s;
+         &:hover {
+            color: @hover_bl;
+         }
       }
       @media @bw768{
          display: block;
          margin-left: 15px;
          color: @black;
-         font-family: @font1;
+         font-family: @font5;
          font-size: 14px;
          font-weight: @font_weight2;
          line-height: 1.214;
+         transition: color 0.2s;
+         &:hover {
+            color: @hover_bl;
+         }
       }
    }
 
@@ -279,9 +291,8 @@
       }
    }
    &__nav-icon {
-      &:hover {
-         color: @hover_bl;
-      }
+      width: 24px;
+      height: 24px;
    }
    &__nav-logIn {
       display: none;
