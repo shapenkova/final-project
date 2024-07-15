@@ -9,23 +9,41 @@
    });
 
    //слайдер
-   const swipers1 = document.querySelectorAll(".js-swiper1");
-      swipers1.forEach(function (swpr) {
-         new Swiper(swpr, {
-            updateOnWindowResize: true,
-            slidesPerView:  2,
-            loop: true,
-            spaceBetween: 30,
-            grabCursor: true,
+   const swiper1 = document.querySelectorAll(".js-swiper1");
+      swiper1.forEach(function (swpr) {
+         new Swiper (swpr, {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            initialSlide: 2,
             pagination: {
                el: ".swiper-pagination",
                clickable: true,
                renderBullet: function (index, className) {
-               return '<span class="' + className + '">' + (index + 85) + "</span>";
+                  let customIndex = [82, 85, 87, 88, 89];
+                  return '<span class="' + className + '">' + customIndex[index] + "</span>";
+               },
             },
-         }
       });
    });
+
+
+   // const swipers1 = document.querySelectorAll(".js-swiper1");
+   //    swipers1.forEach(function (swpr) {
+   //       new Swiper(swpr, {
+   //          updateOnWindowResize: true,
+   //          slidesPerView:  1,
+   //          loop: true,
+   //          spaceBetween: 30,
+   //          grabCursor: true,
+         //    pagination: {
+         //       el: ".swiper-pagination",
+         //       clickable: true,
+         //       renderBullet: function (index, className) {
+         //       return '<span class="' + className + '">' + (index + 85) + "</span>";
+         //    },
+         // }
+   //    });
+   // });
 
 
    //карта
