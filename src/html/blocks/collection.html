@@ -1,110 +1,57 @@
 <section class="collection">
-   <div class="collection__container">
-      <!-- <div class="collection__wrapper">
-      <div class="collection__button">
-         <p class="collection__button-desc"> Коллекция<span class="collection__button-year">1987</span></p>
-         <button type="button" class="collection__button-look btn">Смотреть</button>
+   <div class="collection__wrapper">
+      <!-- svg - фраза -->
+      <div class="collection__svg">
+         <div class="collection__svg-box">
+            <svg class="collection__svg-icon" width="1614" height="600">
+               <use xlink:href="assets/icons/symbols.svg#Union"></use>
+            </svg>
+         </div>
       </div>
 
-      
-      <div class="collection__swiper1 swiper1 js-swiper1"> -->
-
-         <!-- <div class="swiper1-header swiper1-pagination">
-            <button type="button" class="swiper-btn swiper-bnt-one">82</button>
-            <button type="button" class="swiper-btn swiper-bnt-two">86</button>
-            <button type="button" class="swiper-btn swiper-bnt-three">87</button>
-            <button type="button" class="swiper-btn swiper-bnt-four">88</button>
-            <button type="button" class="swiper-btn swiper-bnt-five">89</button>
-         </div> -->
-         <!-- <div class="swiper-pagination"></div>
-
-         <div class="swiper-wrapper">
-
-            <div class="swiper-slide swiper-slidecol">
-               <picture class="swiper-slide__picture">
-                  <source type="image/webp" srcset="assets/images/collection/82.webp">
-                  <img src="assets/images/collection/82.png" alt="img-82" class="swiper-slide__picture-img" />
-               </picture>
-            </div>
-            
-            <div class="swiper-slide swiper-slidecol">
-               <picture class="swiper-slide__picture">
-                  <source type="image/webp" srcset="assets/images/collection/86.webp">
-                  <img src="assets/images/collection/86.png" alt="img-86" class="swiper-slide__picture-img" />
-               </picture>
-            </div>
-
-            <div class="swiper-slide swiper-slidecol">
-               <picture class="swiper-slide__picture">
-                  <source type="image/webp" srcset="assets/images/collection/87.webp">
-                  <img src="assets/images/collection/87.png" alt="img-87" class="swiper-slide__picture-img" />
-               </picture>
-            </div>
-
-            <div class="swiper-slide swiper-slidecol">
-               <picture class="swiper-slide__picture">
-                  <source type="image/webp" srcset="assets/images/collection/88.webp">
-                  <img src="assets/images/collection/88.png" alt="img-88" class="swiper-slide__picture-img" />
-               </picture>
-            </div>
-
-            <div class="swiper-slide swiper-slidecol">
-               <picture class="swiper-slide__picture">
-                  <source type="image/webp" srcset="assets/images/collection/89.webp">
-                  <img src="assets/images/collection/89.png" alt="img-89" class="swiper-slide__picture-img" />
-               </picture>
-            </div>
-
+      <div class="collection__container">
+         <!-- кнопка -->
+         <div class="collection__button">
+            <p class="collection__button-desc"> Коллекция<span class="collection__button-year"></span></p>
+            <button type="button" class="collection__button-look btn">Смотреть</button>
          </div>
-         
+         <!-- пагинация-слайдер -->
+         <div class="swiper-pagination collection__pagination"></div>
+         <!-- слайдер -->
+         <div class="swiper js-swiper1 collection__swiper1">
+            <div class="swiper-wrapper swiper--1s">
+               <div class="swiper-slide">
+                  <picture class="collection__picture">
+                     <source type="image/webp" srcset="assets/images/collection/82.webp">
+                     <img src="assets/images/collection/82.png" alt="img-82" class="collection_picture-img" />
+                  </picture>
+               </div>
+               <div class="swiper-slide">
+                  <picture class="collection__picture">
+                     <source type="image/webp" srcset="assets/images/collection/86.webp">
+                     <img src="assets/images/collection/86.png" alt="img-86" class="collection__picture-img" />
+                  </picture>
+               </div>
+               <div class="swiper-slide">
+                  <picture class="collection_picture">
+                     <source type="image/webp" srcset="assets/images/collection/87.webp">
+                     <img src="assets/images/collection/87.png" alt="img-87" class="collection__picture-img" />
+                  </picture>
+               </div>
+               <div class="swiper-slide">
+                  <picture class="collection__picture">
+                     <source type="image/webp" srcset="assets/images/collection/88.webp">
+                     <img src="assets/images/collection/88.png" alt="img-88" class="collection__picture-img" />
+                  </picture>
+               </div>
+               <div class="swiper-slide">
+                  <picture class="collection__picture">
+                     <source type="image/webp" srcset="assets/images/collection/89.webp">
+                     <img src="assets/images/collection/89.png" alt="img-89" class="collection__picture-img" />
+                  </picture>
+               </div>
+            </div>
+         </div>
       </div>
-
-      </div>
-
-
-      
-
-   </div> -->
-   <div class="swiper-pagination"></div>
-   <div class="swiper js-swiper1 ">
-
-      
-
-      <div class="swiper-wrapper swiper--1s">
-         
-         <div class="swiper-slide">
-            <picture class="collection__picture">
-               <source type="image/webp" srcset="assets/images/collection/82.webp">
-               <img src="assets/images/collection/82.png" alt="img-82" class="collection_picture-img" />
-            </picture>
-         </div>
-         <div class="swiper-slide">
-            <picture class="collection__picture">
-               <source type="image/webp" srcset="assets/images/collection/86.webp">
-               <img src="assets/images/collection/86.png" alt="img-86" class="collection__picture-img" />
-            </picture>
-         </div>
-         <div class="swiper-slide">
-            <picture class="collection_picture">
-               <source type="image/webp" srcset="assets/images/collection/87.webp">
-               <img src="assets/images/collection/87.png" alt="img-87" class="collection__picture-img" />
-            </picture>
-         </div>
-         <div class="swiper-slide">
-            <picture class="collection__picture">
-               <source type="image/webp" srcset="assets/images/collection/88.webp">
-               <img src="assets/images/collection/88.png" alt="img-88" class="collection__picture-img" />
-            </picture>
-         </div>
-         <div class="swiper-slide">
-            <picture class="collection__picture">
-               <source type="image/webp" srcset="assets/images/collection/89.webp">
-               <img src="assets/images/collection/89.png" alt="img-89" class="collection__picture-img" />
-            </picture>
-         </div>
-      
-      </div>
-      
    </div>
-   
 </section>

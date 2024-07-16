@@ -1,31 +1,57 @@
 .collection {
-   .container();
-   display: flex;
-
    &__wrapper {
+      box-sizing: border-box;
+      display: flex;
+      width: 100%;
+   }
+   &__svg {
+      position: absolute;
+      right: 0;
+      margin-top: 80px;
+   }
+   &__svg-box {
       position: relative;
+      flex-shrink: 0;
+      width: 1614px;
+      height: 600px;
+      padding: 0;
+      color: @black;
+      font-size: 0;
+   }
+   &__svg-icon {
+      width: 100%;
+      height: 100%;
+   }
+
+   &__container {
+      .container();
+      position: relative;
+      z-index: 1;
       display: grid;
-      margin-top: 90px;
-      gap: 0 130px;
-      grid-template-columns: 228px 1fr;
-      grid-template-rows: 590px auto;
+      padding-top: 90px;
+      gap: 0 124px;
+      grid-template-columns: 230px 588px 1fr;
+      grid-template-rows: auto;
       grid-template-areas: 
-      'button  slider';
+      'button  slider btns';
+   }
+   &__pagination {
+      grid-area: btns;
    }
    &__button {
       grid-area: button;
       align-self: flex-end;
-      margin-left: 5px;
    }
    &__swiper1 {
       grid-area: slider;
       display: flex;
-      margin-top: 25px;
-      
+      margin-top: 20px;
+      margin-bottom: 100px;
    }
 
    &__button-desc {
-      margin: 0;
+      height: 62px;
+      margin: 0 0 15px;
       color: @black;
       font-family: @font1;
       font-size: 18px;
@@ -62,40 +88,7 @@
          background-color:@hover_bl;
       }
    }
-}
-.swiper-header {
-   display: flex;
-   align-items: flex-start;
-   width: 232px;
-   max-width: 100%;
-   gap: 30px;
-   margin-top: 5px;
-   margin-left: 230px;
-}
-.swiper-btn {
-   box-sizing: border-box;
-   display: inline-block;
-   width: 20px;
-   padding: 0;
-   border: none;
-   background-color: transparent;
-   color: @black;
-   font-family: @font4;
-   font-size: 22px;
-   font-weight: @font_weight3;
-   letter-spacing: 0.05em;
-   text-decoration: none;
-   white-space: nowrap;
-   transition: color 0.2s, font-size 0.2s, font-weight 0.2s;
-   cursor: pointer;
-   &:hover {
-      color:  @green;
-      font-size: 30px;
-      font-weight: @font_weight5;
-   }
-}
 
-.collection {
    &__picture {
       position: relative;
       display: block;
@@ -121,18 +114,3 @@
       object-fit: contain;
    }
 }
-// .swiper-slide {
-//    &:nth-child(1) {
-//       display: none;
-//    }
-//    &:nth-child(2) {
-//       display: none;
-//    }
-//    &:nth-child(4) {
-//       display: none;
-//    }
-//    &:nth-child(5) {
-//       display: none;
-//    }
-// }
-

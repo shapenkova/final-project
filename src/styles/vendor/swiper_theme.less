@@ -1,30 +1,37 @@
-// .js-swiper1 {
-   
-// }
-
+//слайдер №1 на декстопе
 .swiper--1s {
    position: relative;
-   display: flex;
-   justify-content: space-between;
    max-width: 588px;
-   height: 469px;
-   
+   max-height: 469px;
    .swiper-slide {
       box-sizing: border-box;
       width: 100%;
-      max-width: 588px;
+      min-width: 588px;
+      & > * {
+         width: 100%;
+      }
+      .product-slide {
+         &__link {
+            cursor: pointer;
+            cursor: grab;
+            &:active {
+               cursor: pointer;
+               cursor: grabbing;
+            }
+         }
+         &__title {
+            cursor: pointer;
+         }
+      }
    }
-   
 }
 .swiper-pagination {
    width: 232px;
    position: relative;
-   top: 3vw;
-   left: 50vw;
+   top: 1vw;
+   left: 3.5vw;
 }
 .swiper-pagination-bullet {
-   
-   
    padding: 0;
    margin-left: 30px;
    border: none;
@@ -36,15 +43,64 @@
    letter-spacing: 0.05em;
    text-decoration: none;
    white-space: nowrap;
+   cursor: pointer;
 }
-
 .swiper-pagination-bullet-active {
-   color:  @green;
+   color: @green;
    font-size: 30px;
    font-weight: @font_weight5;
 }
+//слайдер №2 на декстопе
+.swiper--2s {
+   position: relative;
+   width: 100%;
+   .swiper-slide {
+      box-sizing: border-box;
+      width: 20%;
+      min-width: 466px;
+      & > * {
+         width: 100%;
+      }
+      
+   }
+   
+   
+}
 
 
+.sec-button-prev, .sec-button-next {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   cursor: pointer;
+   z-index: 10;
+}
+
+.sec-button-prev {
+   left: -29px; 
+}
+
+.sec-button-next {
+   right: -27px;  
+}
+.swiper-footer2 {
+   position: relative;
+   margin: 0 auto;
+   z-index: 1;
+}
+.swiper-footer2__container {
+   position: absolute;
+   top: -26.2vw;
+   left: 36vw;
+   box-sizing: border-box;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 540px;
+   height: 540px;
+   border: 6px solid @black;
+}
+//слайдер №3 на детальной странице
 .swiper-slide {
    height: auto;
    display: flex;
@@ -56,35 +112,6 @@
       box-sizing: border-box;
       width: 25%;
       min-width: 350px;
-      // @media @bw1660 {
-      //    width: calc(33.3333% + 13.3333px);
-      //    min-width: 320px;
-      //    padding-right: 40px;
-      // }
-      // @media @bw1020 {
-      //    width: calc(33.3333% + 10px);
-      //    min-width: 310px;
-      //    padding-right: 30px;
-      // }
-      // @media @bw768 {
-      //    width: calc(33.3333% + 6.6666px);
-      //    min-width: 300px;
-      //    padding-right: 20px;
-      // }
-      // &:last-child {
-      //    width: calc(33.3333% - 40px);
-      //    min-width: 280px;
-      //    padding-right: 0;
-      //    @media @bw1660 {
-      //    width: calc(33.3333% - 26.6666px);
-      //    }
-      //    @media @bw1340 {
-      //    width: calc(33.3333% - 20px);
-      //    }
-      //    @media @bw768 {
-      //       width: calc(33.3333% - 13.3333px);
-      //    }
-      // }
      & > * {
          width: 100%;
       }

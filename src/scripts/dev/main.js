@@ -8,13 +8,17 @@
       root.classList.toggle("show-nav");
    });
 
-   //слайдер
+   //слайдер №1 на декстопе
    const swiper1 = document.querySelectorAll(".js-swiper1");
       swiper1.forEach(function (swpr) {
          new Swiper (swpr, {
             slidesPerView: 1,
             spaceBetween: 0,
             initialSlide: 2,
+            allowTouchMove: true,
+            keyboard: {
+               enabled: true,
+            },
             pagination: {
                el: ".swiper-pagination",
                clickable: true,
@@ -23,29 +27,57 @@
                   return '<span class="' + className + '">' + customIndex[index] + "</span>";
                },
             },
+            on: {
+               slideChange: function () {
+                  let year = document.querySelector('.collection__button-year');
+                  let currentSlideIndex = this.activeIndex;
+                  if (currentSlideIndex === 0) {
+                     year.textContent = '1982'; 
+                  } else if (currentSlideIndex === 1) {
+                     year.textContent = '1985'; 
+                  } else if (currentSlideIndex === 2) {
+                     year.textContent = '1987'; 
+                  } else if (currentSlideIndex === 3) {
+                     year.textContent = '1988'; 
+                  } else if (currentSlideIndex === 4) {
+                     year.textContent = '1989';
+                  }
+               }
+            }
       });
    });
 
-
-   // const swipers1 = document.querySelectorAll(".js-swiper1");
-   //    swipers1.forEach(function (swpr) {
-   //       new Swiper(swpr, {
-   //          updateOnWindowResize: true,
-   //          slidesPerView:  1,
-   //          loop: true,
-   //          spaceBetween: 30,
-   //          grabCursor: true,
-         //    pagination: {
-         //       el: ".swiper-pagination",
-         //       clickable: true,
-         //       renderBullet: function (index, className) {
-         //       return '<span class="' + className + '">' + (index + 85) + "</span>";
-         //    },
-         // }
-   //    });
-   // });
-
-
+   //слайдер №2 на декстопе
+   const swiper2 = document.querySelectorAll(".js-swiper2");
+      swiper2.forEach(function (swpr) {
+         new Swiper (swpr, {
+            spaceBetween: 0,
+            slidesPerView: "auto",
+            slidesPerGroup: 1,
+            watchOverflow: true,
+            initialSlide: 2,
+            freeMode: true,
+            centeredSlides: true,
+            speed: 500,
+            grabCursor: true,
+            notifications: false,
+            keyboard: {
+               enabled: true,
+            },
+            navigation: {
+               nextEl: ".sec-button-next",
+               prevEl: ".sec-button-prev",
+               disabledClass: "arrow--disabled"
+            },
+            //не работает этот код
+            on: {
+               init: function () {
+                 this.el.querySelector('.swiper-notification').style.display = 'none';
+               },
+             },
+         });
+      });
+   
    //карта
    const contactsMap = document.querySelector("#js-contactsMap");
    if (contactsMap) {
@@ -319,6 +351,10 @@
             spaceBetween: 0,
             speed: 500,
             grabCursor: true,
+            allowTouchMove: true,
+            keyboard: {
+               enabled: true,
+            },
             pagination: {
                el: ".swiper-pagination",
                clickable: true
