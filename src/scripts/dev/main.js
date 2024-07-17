@@ -49,35 +49,52 @@
 
    //слайдер №2 на декстопе
    const swiper2 = document.querySelectorAll(".js-swiper2");
-      swiper2.forEach(function (swpr) {
-         new Swiper (swpr, {
-            spaceBetween: 0,
-            slidesPerView: "auto",
-            slidesPerGroup: 1,
-            watchOverflow: true,
-            initialSlide: 2,
-            freeMode: true,
-            centeredSlides: true,
-            speed: 500,
-            grabCursor: true,
-            notifications: false,
-            keyboard: {
-               enabled: true,
-            },
-            navigation: {
-               nextEl: ".sec-button-next",
-               prevEl: ".sec-button-prev",
-               disabledClass: "arrow--disabled"
-            },
-            //не работает этот код
-            on: {
-               init: function () {
-                 this.el.querySelector('.swiper-notification').style.display = 'none';
-               },
-             },
-         });
+      // swiper2.forEach(function (swpr) {
+      //    new Swiper (swpr, {
+      //       spaceBetween: 0,
+      //       slidesPerView: "auto",
+      //       slidesPerGroup: 1,
+      //       watchOverflow: true,
+      //       initialSlide: 2,
+      //       freeMode: true,
+      //       centeredSlides: true,
+      //       speed: 500,
+      //       grabCursor: true,
+      //       notifications: false,
+      //       keyboard: {
+      //          enabled: true,
+      //       },
+      //       navigation: {
+      //          nextEl: ".sec-button-next",
+      //          prevEl: ".sec-button-prev",
+      //          disabledClass: "arrow--disabled"
+      //       },
+            
+      //    });
+      // });
+      
+      const paginationText = [
+         "Lucky Strike, 1987",
+         "Statue of Liberty, 1986",
+         "Andy Mouse, 1986",
+         "Crack Down, 1986",
+         "Keith Haring á Paris poster, 1986"
+      ];
+
+      $('.sliderPosters').slick({
+         slidesToShow: 4,
+         centerMode: true,
+         variableWidth: true,
+         initialSlide: 2,
+         centerPadding: '0px',
+         speed: 1000,
+         prevArrow: $('.slick-prev'),
+         nextArrow: $('.slick-next'),
       });
-   
+      
+      $('.sliderPosters').on('afterChange', function(event, slick, currentSlide){
+         $('#paginationText').text(paginationText[currentSlide]);
+      });
    //карта
    const contactsMap = document.querySelector("#js-contactsMap");
    if (contactsMap) {
@@ -302,7 +319,7 @@
          position: point,
          map: map,
          icon: mapPin,
-         title: "POSTER Collection"
+         title: "Collection"
       });
    }
 
