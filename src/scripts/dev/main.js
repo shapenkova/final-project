@@ -48,53 +48,29 @@
    });
 
    //слайдер №2 на декстопе
-   const swiper2 = document.querySelectorAll(".js-swiper2");
-      // swiper2.forEach(function (swpr) {
-      //    new Swiper (swpr, {
-      //       spaceBetween: 0,
-      //       slidesPerView: "auto",
-      //       slidesPerGroup: 1,
-      //       watchOverflow: true,
-      //       initialSlide: 2,
-      //       freeMode: true,
-      //       centeredSlides: true,
-      //       speed: 500,
-      //       grabCursor: true,
-      //       notifications: false,
-      //       keyboard: {
-      //          enabled: true,
-      //       },
-      //       navigation: {
-      //          nextEl: ".sec-button-next",
-      //          prevEl: ".sec-button-prev",
-      //          disabledClass: "arrow--disabled"
-      //       },
-            
-      //    });
-      // });
-      
-      const paginationText = [
-         "Lucky Strike, 1987",
-         "Statue of Liberty, 1986",
-         "Andy Mouse, 1986",
-         "Crack Down, 1986",
-         "Keith Haring á Paris poster, 1986"
-      ];
+   const paginationText = [
+      "Lucky Strike, 1987",
+      "Statue of Liberty, 1986",
+      "Andy Mouse, 1986",
+      "Crack Down, 1986",
+      "Keith Haring á Paris poster, 1986"
+   ];
 
-      $('.sliderPosters').slick({
-         slidesToShow: 4,
-         centerMode: true,
-         variableWidth: true,
-         initialSlide: 2,
-         centerPadding: '0px',
-         speed: 1000,
-         prevArrow: $('.slick-prev'),
-         nextArrow: $('.slick-next'),
-      });
+   $('#js-sliderSlick').slick({
+      slidesToShow: 4,
+      centerMode: true,
+      variableWidth: true,
+      initialSlide: 2,
+      centerPadding: '0px',
+      speed: 1000,
+      prevArrow: $('.slick-prev'),
+      nextArrow: $('.slick-next'),
+   });
       
-      $('.sliderPosters').on('afterChange', function(event, slick, currentSlide){
-         $('#paginationText').text(paginationText[currentSlide]);
-      });
+   $('#js-sliderSlick').on('afterChange', function(event, slick, currentSlide){
+      $('#paginationText').text(paginationText[currentSlide]);
+   });
+
    //карта
    const contactsMap = document.querySelector("#js-contactsMap");
    if (contactsMap) {
@@ -360,21 +336,21 @@
 
    //слайдер-детальная страница
    const swipers = document.querySelectorAll(".js-swiper");
-      swipers.forEach(function (swpr) {
-         new Swiper(swpr, {
-            updateOnWindowResize: true,
-            slidesPerView: "auto",
-            freeMode: true,
-            spaceBetween: 0,
-            speed: 500,
-            grabCursor: true,
-            allowTouchMove: true,
-            keyboard: {
-               enabled: true,
-            },
-            pagination: {
-               el: ".swiper-pagination",
-               clickable: true
+   swipers.forEach(function (swpr) {
+      new Swiper(swpr, {
+         updateOnWindowResize: true,
+         slidesPerView: "auto",
+         freeMode: true,
+         spaceBetween: 0,
+         speed: 500,
+         grabCursor: true,
+         allowTouchMove: true,
+         keyboard: {
+            enabled: true,
+         },
+         pagination: {
+            el: ".swiper-pagination",
+            clickable: true
          },
          navigation: {
             nextEl: ".swiper-arrow-next",
@@ -383,6 +359,7 @@
          }
       });
    });
+
    //попап
    const eventPP = document.querySelector("#js-productPP");
    if (eventPP) {
@@ -413,11 +390,13 @@
          eventPP.addEventListener("click", closeEventPP);
       });
    }
+
    //маска для телефона
    const mobileMask = $('.js-mobileMask');
    if (mobileMask.length) {
       mobileMask.mask('+7 (000) 000 00 00', { placeholder: "+7 (___) ___ __ __" });
    }
+   
    //селект
    const jsSelectric = $(".js-selectric");
    if (jsSelectric.length) {
@@ -425,10 +404,10 @@
          nativeOnMobile: false
    });
 
-   var scrollContainer = document.querySelector('.scrollbarContainer');
-   if (scrollContainer) {
-      new SimpleBar(scrollContainer, { autoHide: false });
-   }
+   // var scrollContainer = document.querySelector('.scrollbarContainer');
+   // if (scrollContainer) {
+   //    new SimpleBar(scrollContainer, { autoHide: false });
+   // }
    
    $.get('ajax.html', function(data) {
       $('#ajax').append(data).selectric({
