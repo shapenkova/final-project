@@ -2,6 +2,7 @@
 <html lang="ru" >
 <head>
    @@include('blocks/head.html')
+   
 </head>
 <body>
    <!-- Шапка сайта -->
@@ -65,7 +66,7 @@
                            <span class="field__label field__label--red">Пароль</span>
                            <input 
                               class="field__input" 
-                              type="email" 
+                              type="text" 
                               placeholder="Придумай пароль" 
                               name="password" 
                               required 
@@ -85,13 +86,13 @@
 
                      <div class="form__box">
                         
-                        <div class="form__field field  form__group--w50 form__group--w51">
-                           <h6 class="field__title">Страна</h6>
+                        <div class="form__field field  form__group--w50 form__group--w51 custom-select" >
+                           <h6 class="field__title custom-title">Страна</h6>
                         
-                              <select 
-                                 class="field__select js-selectric" 
-                                 name="amount" id="ajax"
-                              
+                           <select 
+                              class="field__select js-selectric" 
+                              name="amount" 
+                              id="ajax"
                            >
                            
                            </select>
@@ -163,7 +164,7 @@
                </div>
             </div>
          </section>
-         
+         </div>
       </div>
    </main>
    <!-- Подвал сайта -->

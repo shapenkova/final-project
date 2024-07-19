@@ -1,0 +1,37 @@
+.custom-scrollbar {
+   position: relative; /* Сделаем контейнер относительно позиционированным */
+}
+
+/* Убираем стрелочки */
+.simplebar-track.simplebar-vertical .simplebar-thumb {
+   border-radius: 0; /* Убираем радиус для более квадратного вида */
+}
+
+/* Стиль для вертикального скроллбара */
+.simplebar-track.simplebar-vertical {
+   width: 6px;  /* Устанавливаем желаемую ширину скролла */
+   background: transparent; /* Делаем фон прозрачным чтобы не было лишних цветов */
+}
+
+/* Стиль для "ползунка" скролла */
+.simplebar-thumb.simplebar-vertical {
+   background-color: black; /* Цвет ползунка */
+   border-radius: 0; /* Убираем закругления */
+   width: 6px; /* Устанавливаем ширину ползунка */
+}
+
+/* Остальное при желании */
+.simplebar-track.simplebar-vertical .simplebar-thumb:hover {
+   background-color: rgba(0, 0, 0, 0.8); /* Изменяем цвет при наведении, если нужно */
+}
+
+/* Для горизонтального скролла */
+.simplebar-track.simplebar-horizontal {
+   height: 6px;  /* Устанавливаем желаемую высоту скролла */
+   background: transparent; /* Делаем фон прозрачным */
+}
+
+.simplebar-thumb.simplebar-horizontal {
+   background-color: black; /* Цвет ползунка для горизонтального скролла */
+   height: 6px;  /* Устанавливаем высоту для ползунка */
+}

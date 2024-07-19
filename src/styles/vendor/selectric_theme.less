@@ -1,7 +1,6 @@
 .selectric-wrapper {
    position: relative;
    width: 100%;
-   transition: background-color 0.2s, border 0.2s, border-bottom 0.2s, width 0.2s, right 0.2s;
    &::after,
    &::before {
       content: "";
@@ -13,7 +12,6 @@
       background-color: @black;
       transition: transform .2s;
       z-index: 10;
-      
    }
    &::after {
       right: 0;
@@ -29,15 +27,9 @@
       @media @bw500 {
          right: 17px;
       }
-      
-   }
-   &:hover {
-      background-color: @gray_bg;
-      border: none;
-      width: 100%;
-      min-width: 481px;
-      right: 10px;
-      padding: 0 20px;
+      &:hover {
+         margin-right: 10px;
+      }
    }
 }
 
@@ -56,9 +48,12 @@
       // margin-top: 5px;
       width: 100% !important;
    }
-   &:hover {
-      background-color: aqua;
-      
+   .selectric .label {
+         padding-left: 20px; 
+   }
+   & .selectric {
+      height: 32px;
+      border-bottom: none;
    }
 }
 
@@ -69,9 +64,7 @@
    background-color: transparent;
    & .button {
       display: none;
-      &:hover {
-         padding-right: 10px;
-      }
+      
    }
    & .label {
       display: flex;
@@ -86,13 +79,14 @@
          font-size: 14px;
       }
    }
+   
 } 
+
 
 .selectric-items  {
    border-radius: none;
    border: none;
    background-color: @gray_bg;
-   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
    overflow: hidden;
    & .selectric-scroll {
       overflow-x: hidden;
@@ -111,6 +105,9 @@
          background: @blue_hover;
          color: @blue;
       }
+      &:first-child {
+         margin-top: 10px;
+      }
    }
    &:hover {
       margin-top: 0;
@@ -120,3 +117,43 @@
    background: @blue_hover;
    color: @blue;
 }
+.custom-select {
+   transition: width 0.3s;
+}
+
+.custom-select.open {
+   position: relative;
+   top: 12px;
+   left: -10px;
+   width: 484px;
+   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
+   background-color: white;
+}
+.custom-select select {
+   width: 100%;
+}
+.selectric-items {
+   border-top: 1px solid  #7a7a7a;
+   background-color: white;
+}
+.selectric-scroll {
+   max-height: 200px;
+   margin-right: 6px;
+}
+.custom-title {
+   transition: margin 0.2s;
+}
+.custom-title.open2 {
+   margin: 10px 0 18px 20px;
+}
+.selectric-wrapper.open3::after {
+   right: 15px;
+}
+.selectric-wrapper.open3::before {
+   right: 18px;
+}
+.selectric-wrapper.open4::after,
+.selectric-wrapper.open4::before {
+   top: 15px;
+}
+
