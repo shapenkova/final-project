@@ -3,10 +3,18 @@
    position: relative;
    max-width: 588px;
    max-height: 469px;
+   @media @bw1340 {
+      max-width: 346px;
+      max-height: 275px;
+   }
    .swiper-slide {
       box-sizing: border-box;
       width: 100%;
       min-width: 588px;
+      @media @bw1340 {
+         width: 58%;
+         min-width: 346px;
+      }
       & > * {
          width: 100%;
       }
@@ -30,6 +38,14 @@
    position: relative;
    top: 1vw;
    left: 3.5vw;
+   @media @bw1660 {
+      top: 1.5vw;
+      left: 0.5vw;
+   }
+   @media @bw1340 {
+      top: 2.5vw;
+      left: 6.6vw;
+   }
 }
 .swiper-pagination-bullet {
    padding: 0;
@@ -44,73 +60,20 @@
    text-decoration: none;
    white-space: nowrap;
    cursor: pointer;
+   @media @bw1340 {
+      margin-left: 20px;
+      font-size: 16px;
+   }
 }
 .swiper-pagination-bullet-active {
    color: @green;
    font-size: 30px;
    font-weight: @font_weight5;
+   @media @bw1340 {
+      font-size: 20px;
+   }
 }
-//слайдер №2 на декстопе
 
-// .js-swiper2 .slick-list {
-//    display: flex;
-//    justify-content: center;
-//    align-items: center;
-//    min-width: 0;
-
-// }
-// .swiper--2s {
-//    position: relative;
-//    width: 100%;
-//    .swiper-slide {
-//       box-sizing: border-box;
-      
-//       width: 20%;
-//       min-width: 466px;
-//       & > * {
-//          width: 100%;
-//       }
-      
-//    }
-   
-   
-// }
-// .swiper--2s .swiper-notification {
-//    display: none;
-// }
-
-// .sec-button-prev, .sec-button-next {
-//    position: absolute;
-//    top: 50%;
-//    transform: translateY(-50%);
-//    cursor: pointer;
-//    z-index: 10;
-// }
-
-// .sec-button-prev {
-//    left: -29px; 
-// }
-
-// .sec-button-next {
-//    right: -27px;  
-// }
-// .swiper-footer2 {
-//    position: relative;
-//    margin: 0 auto;
-//    z-index: 1;
-// }
-// .swiper-footer2__container {
-//    position: absolute;
-//    top: -26.2vw;
-//    left: 36vw;
-//    box-sizing: border-box;
-//    display: flex;
-//    justify-content: space-between;
-//    align-items: center;
-//    width: 540px;
-//    height: 540px;
-//    border: 6px solid @black;
-// }
 //слайдер №3 на детальной странице
 .swiper-slide {
    height: auto;

@@ -1,13 +1,41 @@
 <section class="collection">
    <div class="collection__wrapper">
-      <!-- svg - фраза -->
+      <div class="collection__imgBox">
+         <picture class="collection__picturePhrase">
+            <source 
+               media="(max-width: 599px)" 
+               type="image/webp"  
+               srcset="assets/images/phrase/text-320.webp"
+            >
+            <source media="(max-width: 599px)" srcset="assets/images/phrase/text-320.png">
+
+            <source 
+               media="(max-width: 1339px)" 
+               type="image/webp"  
+               srcset="assets/images/phrase/text-768.webp"
+            >
+            <source media="(max-width: 1339px)" srcset="assets/images/phrase/text-768.png">
+
+            <source 
+               media="(max-width: 1659px)" 
+               type="image/webp"  
+               srcset="assets/images/phrase/text-1340.webp"
+            >
+            <source media="(max-width: 1659px)" srcset="assets/images/phrase/text-1340.png">
+
+            <source type="image/webp" srcset="assets/images/phrase/text.png">
+            <img src="assets/images/phrase/text.png" alt="img" class="collection__imgPhrase" />   
+         </picture>
+      </div>
+      <!-- svg - фраза
       <div class="collection__svg">
          <div class="collection__svg-box">
             <svg class="collection__svg-icon" width="1614" height="600">
                <use xlink:href="assets/icons/symbols.svg#Union"></use>
             </svg>
          </div>
-      </div>
+      </div> -->
+
 
       <div class="collection__container">
          <!-- кнопка -->

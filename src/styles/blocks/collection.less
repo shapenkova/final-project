@@ -1,39 +1,154 @@
 .collection {
    &__wrapper {
+      position: relative;
       box-sizing: border-box;
       display: flex;
       width: 100%;
+      margin-top: 80px;
+      @media @bw1340 {
+         margin-top: 55px;
+      }
+      @media @bw768 {
+         margin-top: 30px;
+      }
    }
-   &__svg {
+   &__imgBox {
       position: absolute;
       right: 0;
-      margin-top: 80px;
+      overflow: hidden;
    }
-   &__svg-box {
+   &__picturePhrase {
       position: relative;
-      flex-shrink: 0;
-      width: 1614px;
-      height: 600px;
-      padding: 0;
-      color: @black;
+      display: block;
+      width: 84.1vw;
       font-size: 0;
+      overflow: hidden;
+      &::after {
+         content: "";
+         display: block;
+         width: 100%;
+         padding-top: 37.17%;
+         @media @bw1660 {
+            padding-top: 46.7%;
+         }
+         @media @bw1340 {
+            padding-top: 47.3%;
+         }
+         @media @bw768 {
+            padding-top: 72.33%;
+         }
+      }
+      @media @bw1660 {
+         width: 96vw;
+      }
+      @media @bw768 {
+         width: 94vw;
+      }
    }
-   &__svg-icon {
+   &__imgPhrase {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -10;
       width: 100%;
       height: 100%;
+      object-fit: contain;
    }
+   // &__svg {
+   //    position: absolute;
+   //    right: 0;
+   // }
+   // &__svg-box {
+   //    position: relative;
+   //    flex-shrink: 0;
+   //    width: 1614px;
+   //    height: 600px;
+   //    padding: 0;
+   //    color: @black;
+   //    font-size: 0;
+   //    @media @bw1660 {
+   //       width: 1286px;
+   //    }
+   //    @media @bw1340 {
+   //       width: 1100px;
+   //    }
+   //    @media @bw1170 {
+   //       width: 900px;
+   //    }
+   //    @media @bw1020 {
+   //       width: 738px;
+   //       height: 349px;
+   //    }
+   //    @media @bw768 {
+   //       width: 600px;
+   //       height: 217px;
+   //    }
+   // }
+   // &__svg-icon {
+   //    width: 100%;
+   //    height: 100%;
+      
+   // }
 
+   // &__svg {
+   //    position: absolute;
+   //    right: 0;
+   //    width: 1614px;
+   //    @media @bw1660 {
+   //       width: calc(100% + 280px);
+   //       margin-right: -330px;
+   //    }
+   // }
+   // &__svg-box {
+   //    position: relative;
+   //    right: 0;
+   //    width: 100%;
+   //    &::before {
+   //       content: '';
+   //       display: block;
+   //       width: 100%;
+   //       padding-bottom: 37.17%;
+   //       // @media @bw1660 {
+   //       //    padding-bottom: 46.65%;
+   //       // }
+   //       // @media @bw1340 {
+   //       //    padding-bottom: 47.29%;
+   //       // }
+   //       // @media @bw1020 {
+   //       //    padding-bottom: 72.33%;
+   //       // }
+   //    }
+   // }
+   // &__svg-icon {
+   //    position: absolute;
+   //    top: 0;
+   //    right: 0;
+   //    z-index: -10;
+   //    width: 100%;
+   //    height: 100%;
+   // }
    &__container {
       .container();
-      position: relative;
-      z-index: 1;
       display: grid;
-      padding-top: 90px;
+      padding-top: 10px;
       gap: 0 124px;
       grid-template-columns: 230px 588px 1fr;
       grid-template-rows: auto;
       grid-template-areas: 
       'button  slider btns';
+      @media @bw1660 {
+         gap: 0 85px;
+      }
+      @media @bw1340 {
+         padding-top: 0;
+         grid-template-columns: 1fr;
+         grid-template-rows: 1fr 113px;
+         grid-template-areas: 
+         'slider btns'
+         'button button';
+         gap: 100px 0 ;
+      }
    }
    &__pagination {
       grid-area: btns;
@@ -47,6 +162,10 @@
       display: flex;
       margin-top: 20px;
       margin-bottom: 100px;
+      @media @bw1340 {
+         margin-bottom: 0;
+         margin-left: 22.8vw;
+      }
    }
 
    &__button-desc {
@@ -57,6 +176,11 @@
       font-size: 18px;
       font-weight: @font_weight2;
       line-height: 1.388;
+      @media @bw1340 {
+         height: 37px;
+         font-size: 16px;
+         line-height: 1.37;
+      }
    }
    &__button-year {
       margin-left: 20px;
@@ -64,6 +188,9 @@
       font-size: 60px;
       font-weight: @font_weight5;
       letter-spacing: 0.05em;
+      @media @bw1340 {
+         font-size: 36px;
+      }
    }
    &__button-look {
       display: inline-block;
@@ -102,6 +229,12 @@
          display: block;
          width: 100%;
          padding-top: 79.76%;
+         @media @bw1340 {
+            padding-top: 79.48%;
+         }
+      }
+      @media @bw1340 {
+         width: 346px;
       }
    }
    &__picture-img {
