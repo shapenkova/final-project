@@ -5,36 +5,85 @@
    display: flex;
    flex-direction: column;
    margin: 0 auto;
-   padding-right: 45px;
-   padding-top: 100px;
-   padding-bottom: 150px; //проверить по отступам
+   padding: 100px 0 150px 45px;
+   
+   @media @bw1660 {
+      padding: 100px 40px 127px;
+   }
+   @media @bw1340 {
+      padding: 40px 30px 95px;
+   }
+   @media @bw768 {
+      padding: 40px 20px 90px;
+   }
    &__title {
       margin: 0 auto;
       padding-left: 45px;
+
+      @media @bw1660 {
+         padding-left: 5px;
+      }
+      @media @bw768 {
+         padding-left: 0;
+      }
    }
    &__wrapper {
       margin-top: 80px;
       display: flex;
       justify-content: space-between;
+
+      @media @bw1340 {
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: center;
+         margin-top: 60px;
+      }
+      @media @bw768 {
+         margin-top: 40px;
+         
+      }
    }
-   .wrapper-content {
+   &__wrapper-content {
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
+
+      @media @bw1340 {
+         flex-direction: row;
+         gap: 8px;
+      }
+      @media @bw768 {
+         flex-direction: column;
+         gap: 0;
+      }
    }
    &__box1 {
+      width: 100%;
       max-width: 204px;
-      padding: 30px 0 30px 40px;
+      padding: 30px 0 30px 38px;
+      @media @bw1020 {
+         padding: 20px 0 20px 64px;
+      }
+      @media @bw768 {
+         padding: 20px 0 20px 19px;
+      }
    }
    &__box2 {
+      width: 100%;
       max-width: 258px;
-      padding: 20px 0 30px 40px;
+      padding: 20px 0 30px 38px;
+      @media @bw1020 {
+         padding: 20px 0 20px 64px;
+      }
+      @media @bw768 {
+         padding: 20px 0 20px 19px;
+      }
    }
    &__wrapper-box {
       margin-top: 52px;
-      margin-bottom: 40px;
+      margin-bottom: 42px;
       width: 361px;
-      height: 259px;
+      height: 257px;
       border-left: 6px solid transparent;
       cursor: pointer;
       transition:  background-color 0.2s, box-shadow 0.2s, border-left-color 0.3s;
@@ -45,13 +94,26 @@
       &:hover {
          border-left-color: @green;
          background-color: @gray_bg;
-         box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
+         box-shadow: 0 0 50px 0 @shadow;
+      }
+      @media @bw1660 {
+         margin-top: 22px;
+      }
+      @media @bw1340 {
+         width: 322px;
+         height: 219px;
+         margin: 0;
+      }
+      @media @bw768 {
+         width: 274px;
+         height: 172px;
+         margin: 0;
       }
    }
 }
 .info-card {
    &__title {
-      margin: 0 0 20px 0;
+      margin: 0 0 25px;
       color: @black;
       font-family: @font4;
       font-size: 40px;
@@ -59,6 +121,16 @@
       line-height: 1;
       letter-spacing: 0.05em;
       word-wrap: none;
+      @media @bw1340 {
+         font-size: 36px;
+      }
+      @media @bw1020 {
+         margin: 0 0 17px;
+      }
+      @media @bw768 {
+         margin: 0 0 15px;
+         font-size: 30px;
+      }
    }
    &__desc {
       margin: 0;
@@ -67,6 +139,10 @@
       font-size: 18px;
       font-weight: @font_weight2;
       line-height: 1.388;
+      @media @bw1340 {
+         font-size: 16px;
+         line-height: 1.56;
+      }
    }
    &__desc-weight {
       font-weight: @font_weight4;
@@ -79,13 +155,20 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
       max-width: 183px;
-      margin: 20px 0 0 0;
+      margin: 20px 0 0;
       color: @black;
       font-family: @font1;
       font-size: 18px;
       font-weight: @font_weight2;
       line-height: 1.388;
+      @media @bw1020 {
+         max-width: 165px;
+         margin: 15px 0 0;
+         font-size: 16px;
+         line-height: 1.56;
+      }
    }
    &__timetable-desc {
       margin: 0;
@@ -98,16 +181,20 @@
 #js-contactsMap {
    width: 862px;
    height: 623px;
-   @media @bw1020 {
-      width: 708px;
-      height: 463px;
-      margin-bottom: 100px;
+   @media @bw1660 {
+      width: 57.91vw;
+      height: 561px;
+   }
+   @media @bw1340 {
+      width: 92.18vw;
+      height: 511px;
+      margin-bottom: 20px;
       order: -1;
    }
    @media @bw768 {
-      width: 280px;
-      height: 186px;
-      margin-bottom: 59px;
+      width: 87.5vw;
+      height: 203px;
+      margin-bottom: 21px;
       order: -1;
    }
 }
