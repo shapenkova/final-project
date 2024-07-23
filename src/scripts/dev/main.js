@@ -94,7 +94,7 @@
 //       const sliderd = $(".slick-track");
 //       const items = sliderd.children(); // Получаем элементы слайдера
 //       console.log(items)
-//       if ($(window).width() <= 1340) {
+//       if ($(window).width() <= 1660) {
 //           if (items.length === 14) {
 //               // Перемещаем пятый элемент перед первым
 //               items.eq(5).insertBefore(items.eq(3));
