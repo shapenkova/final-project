@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" >
 <head>
    @@include('blocks/head.html')
 </head>
@@ -27,7 +27,7 @@
                   <div class="catalog__products-wrapper">
                      <div class="catalog__products-btns">
                         <button type="button" class="catalog__button-filter" id="js-btnFilter">Фильтр</button>
-                        <button type="reset" class="catalog__button-reset">Сбросить</button>
+                        <button type="reset" class="catalog__button-reset" id="js-resetBtn">Сбросить</button>
                      </div>
                      <div class="catalog__products-box">
                         @@include('blocks/filter.html')
@@ -44,6 +44,7 @@
    <!-- Скрипты -->
    <script src="scripts/jquery-3.7.1.min.js"></script>
    <script src="scripts/nouislider.min.js"></script>
+   <script src="scripts/slick.min.js"></script>
    <script src="scripts/main.js"></script>
 </body>
 </html>

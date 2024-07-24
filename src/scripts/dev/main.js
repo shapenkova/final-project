@@ -455,4 +455,27 @@
          item2.css("fill", "");
       });
    }
+
+   
+
+   const filterBtn = document.getElementById("js-btnFilter");
+   const filterPopup = document.getElementById("filterPopup");
+   const closePopup = document.getElementById("js-closePopup");
+
+   // Открываем попап при нажатии на кнопку "Фильтр"
+   filterBtn.addEventListener("click", function() {
+      filterPopup.style.display = "flex"; // Показываем попап
+   });
+
+   // Закрываем попап при нажатии на кнопку закрытия
+   closePopup.addEventListener("click", function() {
+      filterPopup.style.display = "none"; // Скрываем попап
+   });
+
+   // Закрываем попап при клике вне области контента (опционально)
+   window.addEventListener("click", function(event) {
+      if (event.target === filterPopup) {
+         filterPopup.style.display = "none"; // Скрываем попап
+      }
+   });
 }) ();
