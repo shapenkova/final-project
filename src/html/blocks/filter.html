@@ -1,5 +1,15 @@
 <div class="filter" id="js-filter">
+   <div  class="filter__sticky-close">
+      <button type="button" class="filter__x-btn x-btn js-filterCloseBtn">
+         <svg class="x-btn__icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#close"></use>
+         </svg>
+      </button>
+   </div>
    <div class="filter__container">
+      
+      
+      <h2 class="filter__title section-title">Фильтр</h2>
       <form class="filter__formFil formFil" id="js-filterForm">
          <div class="formFil__list">
             <div class="formFil__section">
@@ -97,7 +107,7 @@
             </div>
             <div class="formFil__orientation">
                <h6 class="formFil__list-title">Ориентация</h6>
-               <div class="field__check check">
+               <div class="field__check check" id="orientation">
                   <label class="check__item">
                      <input 
                         class="check__input" 
@@ -123,7 +133,7 @@
                </div>
             </div>
             <div class="formFil__price">
-               <h6 class="formFil__list-title">Цена, &#8381;</h6>
+               <h6 class="formFil__price-title">Цена, &#8381;</h6>
 
                <div class="formFil__price-slider" id="range-slider"></div>
 						<div class="formFil__price-inputs">
@@ -150,7 +160,7 @@
                         >
 							</label>
 						</div>
-               </div>
+            </div>
          </div>
 
          <div class="formFil__btns">
@@ -162,5 +172,6 @@
             </button>
          </div>
       </form>
+      
    </div>
 </div>

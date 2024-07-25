@@ -1,17 +1,59 @@
 .filter { 
+   @media @bw1340 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 110;
+      box-sizing: border-box;
+      display: none;
+      background-color: @gray_bg;
+      padding: 60px 30px;
+      overflow-y: auto;
+   }
+   @media @bw768 {
+      padding: 60px 20px;
+   }
+   &__sticky-close {
+      display: none;
+      @media @bw1340 {
+         position: absolute;
+         display: flex;
+         top: 25px;
+         right: 25px;
+      }
+      @media @bw768 {
+         top: 16px;
+         right: 15px;
+      }
+   }
+
    &__container {
+      position: relative;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       width: 100%;
       max-width: 265px;
+      @media @bw1340 {
+         max-width: 708px;
+      }
+      @media @bw768 {
+         max-width: 100%;
+      }
+   }
+   &__title {
+      display: none;
+      @media @bw1340 {
+         display: flex;
+         justify-content: flex-start;
+         margin-bottom: 40px;
+      }
    }
 }
 
 .formFil {
-   @media @bw1340 {
-      display: none;
-   }
    &__list-title {
       margin: 0 0 32px 0;
       color: @black;
@@ -19,25 +61,67 @@
       font-size: 18px;
       font-weight: @font_weight4;
       line-height: 1.388;
-      @media @bw768 {
+      transition: font-size 0.2s;
+      @media @bw1340 {
+         margin: 0 0 24px 0;
          font-size: 16px;
          line-height: 1.56;
       }
+      @media @bw768 {
+         margin: 0 0 20px 0;
+      }
+   }
+   &__price-title {
+      margin: 0 0 32px 0;
+      color: @black;
+      font-family: @font1;
+      font-size: 18px;
+      font-weight: @font_weight4;
+      line-height: 1.388;
+      transition: font-size 0.2s;
+      @media @bw1340 {
+         margin: 0 0 30px 0;
+         font-size: 16px;
+         line-height: 1.56;
+         
+      }
+      
    }
    &__list {
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
       gap: 60px;
+      @media @bw1340 {
+         width: 708px;
+         gap: 27px;
+      }
+      @media @bw768 {
+         width: 100%;
+         gap: 32px;
+      }
    }
    &__price-inputs {
       display: flex;
       justify-content: space-between;
       width: 263px;
+      @media @bw1340 {
+         width: 354px;
+      }
+      @media @bw768 {
+         width: 100%;
+      }
    }
    &__price-slider {
       margin-bottom: 20px;
       cursor: pointer;
+      @media @bw1340 {
+         width: 354px;
+         margin-bottom: 16px;
+      }
+      @media @bw768 {
+         width: 100%;
+      }
    }
    &__price-label {
       display: flex;
@@ -87,6 +171,15 @@
       &:hover {
          background-color:@hover_bl;
       }
+      @media @bw1340 {
+         width: 100%;
+         height: 50px;
+         margin: 58px 0 0;
+         font-size: 16px;
+      }
+      @media @bw768 {
+         margin: 38px 0 0;
+      }
    }
    &__reset-btn {
       box-sizing: border-box;
@@ -104,17 +197,38 @@
       text-align: center;
       text-decoration: none;
       white-space: nowrap;
-      transition: color 0.2s;
+      transition: color 0.2s, font-size 0.2s, top 0.2s, left 0.2s;
       cursor: pointer;
       &:hover {
          color:@hover_bl;
       }
+      @media @bw1340 {
+         position: absolute;
+         top: 30px;
+         left: 185px;
+         font-size: 16px;
+         line-height: 1.56;
+      }
+      @media @bw768 {
+         top: 12px;
+         left: 110px;
+      }
    }
 }
+
 .radio {
    display: flex;
    flex-direction: column;
    align-items: flex-start;
+   @media @bw1340 {
+      flex-direction: row;
+      gap: 50px;
+   }
+   @media @bw768 {
+      flex-wrap: wrap;
+      gap: 16px 45px;
+      padding-top: 5px;
+   }
 
    &__item {
       position: relative;
@@ -130,8 +244,22 @@
       cursor: pointer;
       &:nth-child(1) {
          margin-bottom: 12px;
+         @media @bw768 {
+            margin-bottom: 0;
+         }
+      }
+      &:nth-child(2) {
+         @media @bw768 {
+            order: 1;
+         }
       }
       &:last-child {
+         margin-bottom: 0;
+      }
+      @media @bw1340 {
+         padding-top: 0;
+      }
+      @media @bw768 {
          margin-bottom: 0;
       }
    }
@@ -169,5 +297,10 @@
       font-weight: @font_weight2;
       font-size: 18px;
       line-height: 1.388;
+      @media @bw1340 {
+         margin-left: 10px;
+         font-size: 16px;
+         line-height: 1.377;
+      }
    }
 }

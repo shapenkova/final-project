@@ -353,7 +353,7 @@
 		step: 1,
       range: {
 			'min': [0],
-			'max': [5670]
+			'max': [6000]
       }
 	});
 
@@ -435,6 +435,7 @@
       });
    }
 
+   //иконки 
 
    const item1 = $(".nav-icon1");
    const item2 = $(".nav-icon2");
@@ -458,24 +459,45 @@
 
    
 
-   const filterBtn = document.getElementById("js-btnFilter");
-   const filterPopup = document.getElementById("filterPopup");
-   const closePopup = document.getElementById("js-closePopup");
+   
+   const filterForm = document.querySelector("#js-filter");
+   const jsForm = document.querySelector("#js-filterForm");
 
-   // Открываем попап при нажатии на кнопку "Фильтр"
-   filterBtn.addEventListener("click", function() {
-      filterPopup.style.display = "flex"; // Показываем попап
-   });
+   
 
-   // Закрываем попап при нажатии на кнопку закрытия
-   closePopup.addEventListener("click", function() {
-      filterPopup.style.display = "none"; // Скрываем попап
-   });
+   if (filterForm) {
+      const filterBtn = document.querySelector("#js-btnFilter");
+      const closeEventPP = function (event) {
+         function close() {
+            document.removeEventListener("keyup", closeEventPP);
+            filterBtn.removeEventListener("click", closeEventPP);
+            root.classList.remove("show-product-pp");
+         }
+      switch (event.type) {
+         case "keyup":
+            if (event.key === "Escape" || event.keyCode === 27) close();
+            break;
+         case "click":
+            if (
+               event.target === this ||
+               event.target.classList.contains("js-filterCloseBtn")
+            )
+               close();
+            break;
+         }
+      };
+      filterBtn.addEventListener("click", function () {
+         root.classList.add("show-product-pp");
+         document.addEventListener("keyup", closeEventPP);
+         filterForm.addEventListener("click", closeEventPP);
+      });
+      
+   }
+   if(jsForm) {
+      const resetBtn = document.querySelector(".js-resetBtn");
+      resetBtn.addEventListener("click", function () {
+         jsForm.reset();
+      });
+   }
 
-   // Закрываем попап при клике вне области контента (опционально)
-   window.addEventListener("click", function(event) {
-      if (event.target === filterPopup) {
-         filterPopup.style.display = "none"; // Скрываем попап
-      }
-   });
 }) ();
