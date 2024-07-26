@@ -344,39 +344,7 @@
    }
 
    //Фильтр на странице Каталог
-   const rangeSlider = document.querySelector('#range-slider');
-
-   if (rangeSlider) {
-      noUiSlider.create(rangeSlider, {
-      start: [650, 5000],
-		connect: true,
-		step: 1,
-      range: {
-			'min': [0],
-			'max': [6000]
-      }
-	});
-
-	const input0 = document.getElementById('input-0');
-	const input1 = document.getElementById('input-1');
-	const inputs = [input0, input1];
-
-	rangeSlider.noUiSlider.on('update', function(values, handle){
-		inputs[handle].value = Math.round(values[handle]);
-	});
-
-	const setRangeSlider = (i, value) => {
-		let arr = [null, null];
-		arr[i] = value;
-		rangeSlider.noUiSlider.set(arr);
-	};
-
-	inputs.forEach((el, index) => {
-		el.addEventListener('change', (e) => {
-			setRangeSlider(index, e.currentTarget.value);
-		});
-	});
-   }
+   
 
    //слайдер-детальная страница
    const swipers = document.querySelectorAll(".js-swiper");
@@ -460,44 +428,6 @@
    
 
    
-   const filterForm = document.querySelector("#js-filter");
-   const jsForm = document.querySelector("#js-filterForm");
-
    
-
-   if (filterForm) {
-      const filterBtn = document.querySelector("#js-btnFilter");
-      const closeEventPP = function (event) {
-         function close() {
-            document.removeEventListener("keyup", closeEventPP);
-            filterBtn.removeEventListener("click", closeEventPP);
-            root.classList.remove("show-product-pp");
-         }
-      switch (event.type) {
-         case "keyup":
-            if (event.key === "Escape" || event.keyCode === 27) close();
-            break;
-         case "click":
-            if (
-               event.target === this ||
-               event.target.classList.contains("js-filterCloseBtn")
-            )
-               close();
-            break;
-         }
-      };
-      filterBtn.addEventListener("click", function () {
-         root.classList.add("show-product-pp");
-         document.addEventListener("keyup", closeEventPP);
-         filterForm.addEventListener("click", closeEventPP);
-      });
-      
-   }
-   if(jsForm) {
-      const resetBtn = document.querySelector(".js-resetBtn");
-      resetBtn.addEventListener("click", function () {
-         jsForm.reset();
-      });
-   }
 
 }) ();

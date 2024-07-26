@@ -7,8 +7,6 @@
       </button>
    </div>
    <div class="filter__container">
-      
-      
       <h2 class="filter__title section-title">Фильтр</h2>
       <form class="filter__formFil formFil" id="js-filterForm">
          <div class="formFil__list">
@@ -134,15 +132,15 @@
             </div>
             <div class="formFil__price">
                <h6 class="formFil__price-title">Цена, &#8381;</h6>
-
                <div class="formFil__price-slider" id="range-slider"></div>
 						<div class="formFil__price-inputs">
 							<label class="formFil__price-label">
 								<span class="formFil__price-text">от</span>
 								<input 
                            type="number" 
-                           min="650" 
-                           max="5000" 
+                           min="0" 
+                           max="6000" 
+                           value="650"
                            placeholder="650" 
                            class="formFil__price-input" 
                            id="input-0"
@@ -152,8 +150,9 @@
 								<span class="formFil__price-text">до</span>
 								<input 
                            type="number" 
-                           min="650" 
-                           max="5000" 
+                           min="0" 
+                           max="6000"
+                           value="5000" 
                            placeholder="5000" 
                            class="formFil__price-input" 
                            id="input-1"
@@ -162,7 +161,6 @@
 						</div>
             </div>
          </div>
-
          <div class="formFil__btns">
             <button type="button" class="formFil__apply formFil__apply--w50">
                Применить
@@ -172,6 +170,5 @@
             </button>
          </div>
       </form>
-      
    </div>
 </div>
