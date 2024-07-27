@@ -116,6 +116,15 @@
       box-sizing: border-box;
       width: 25%;
       min-width: 350px;
+      @media @bw1660 {
+         min-width: 315px;
+      }
+      @media @bw1340 {
+         min-width: 354px;
+      }
+      @media @bw768 {
+         min-width: 280px;
+      }
      & > * {
          width: 100%;
       }
@@ -156,4 +165,22 @@
    width: 132px;
    max-width: 100%;
    margin-right: 30px;
+   @media @bw1660 {
+      top: -25px;
+      margin-right: 29px;
+   }
+   @media @bw1340 {
+      top: -20px;
+      width: 122px;
+      margin-right: 20px;
+   }
+   @media @bw768 {
+      position: relative;
+      order: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 154px;
+      margin: 10px 0 0 50px;
+   }
 }

@@ -45,7 +45,7 @@
          function close() {
             document.removeEventListener("keyup", closeEventPP);
             filterBtn.removeEventListener("click", closeEventPP);
-            root.classList.remove("show-product-pp");
+            root.classList.remove("show-filter-pp");
          }
       switch (event.type) {
          case "keyup":
@@ -61,7 +61,7 @@
          }
       };
       filterBtn.addEventListener("click", function () {
-         root.classList.add("show-product-pp");
+         root.classList.add("show-filter-pp");
          document.addEventListener("keyup", closeEventPP);
          filterForm.addEventListener("click", closeEventPP);
       });
@@ -74,58 +74,74 @@
       });
    }
 
-   
    let buttons = Array.from(document.querySelectorAll('.catalog-card__btn-heart'));
    let buttons2 = Array.from(document.querySelectorAll('.catalog-card__btn-basket'));
    const qtyDisplay = document.querySelector('.page-header__qty');
    const qtyDisplay2 = document.querySelector('.page-header__qty2');
-      let counter = 0;
-      let counter2 = 0;
+   let counter = 0;
+   let counter2 = 0;
+   const updateQtyDisplay = () => {
+      qtyDisplay.style.display = counter > 0 ? 'inline' : 'none';
+   };
 
-      buttons.forEach(button => {
-         button.addEventListener('click', function() {
-               if (button.classList.contains('active')) {
-                  counter--;
-                  button.classList.remove('active');
-               } else {
-                  counter++;
-                  button.classList.add('active');
-               }
-               qtyDisplay.textContent = counter;
-         });
+   const updateQtyDisplay2 = () => {
+      qtyDisplay2.style.display = counter2 > 0 ? 'inline' : 'none';
+   };
+
+   buttons.forEach(button => {
+      button.addEventListener('click', function() {
+         if (button.classList.contains('active')) {
+            counter--;
+            button.classList.remove('active');
+         } else {
+            counter++;
+            button.classList.add('active');
+         }
+         qtyDisplay.textContent = counter;
+         let svg = document.querySelector('.nav-icon1');
+         if (svg) {
+            svg.style.fill = counter > 0 ? '#1066d0' : 'transparent';
+         }
+         updateQtyDisplay();
       });
+   });
       
-      buttons.forEach(button => {
-         button.addEventListener('click', function() {
-            let svg = this.querySelector('.svgElement1');
-            if (svg) {
-               let fill = svg.getAttribute('fill');
-               svg.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
-            }
-         });
+   buttons.forEach(button => {
+      button.addEventListener('click', function() {
+         let svg = this.querySelector('.svgElement1');
+         if (svg) {
+            let fill = svg.getAttribute('fill');
+            svg.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
+         }
       });
+   });
 
-      buttons2.forEach(button => {
-         button.addEventListener('click', function() {
-               if (button.classList.contains('active')) {
-                  counter2--;
-                  button.classList.remove('active');
-               } else {
-                  counter2++;
-                  button.classList.add('active');
-               }
-               qtyDisplay2.textContent = counter2;
-         });
+   buttons2.forEach(button => {
+      button.addEventListener('click', function() {
+         if (button.classList.contains('active')) {
+            counter2--;
+            button.classList.remove('active');
+         } else {
+            counter2++;
+            button.classList.add('active');
+         }
+         qtyDisplay2.textContent = counter2;
+         let svg2 = document.querySelector('.nav-icon2');
+         if (svg2) {
+            svg2.style.fill = counter2 > 0 ? '#1066d0' : 'transparent';
+         }
+         updateQtyDisplay2();
       });
-      buttons2.forEach(button => {
-         button.addEventListener('click', function() {
-            let svg2 = this.querySelector('.svgElement2');
-            if (svg2) {
-               let fill = svg2.getAttribute('fill');
-               svg2.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
-            }
-         });
+   });
+   buttons2.forEach(button => {
+      button.addEventListener('click', function() {
+         let svg2 = this.querySelector('.svgElement2');
+         if (svg2) {
+            let fill = svg2.getAttribute('fill');
+            svg2.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
+         }
       });
-
-      
+   });
+   updateQtyDisplay();
+   updateQtyDisplay2();
 })()

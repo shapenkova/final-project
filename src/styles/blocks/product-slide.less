@@ -5,6 +5,15 @@
    width: 350px;
    max-width: 100%;
    min-width: 280px;
+   @media @bw1660 {
+      width: 315px;
+   }
+   @media @bw1340 {
+      width: 354px;
+   }
+   @media @bw768 {
+      width: 280px;
+   }
 
    &__link {
       box-sizing: border-box;
@@ -15,6 +24,12 @@
       color: @black;
       text-decoration: none;
       cursor: pointer;
+      @media @bw1340 {
+         padding: 18px 29px 15px 31px;
+      }
+      @media @bw768 {
+         padding: 18px 29px 17px 31px;
+      }
    }
    &__picture {
       position: relative;
@@ -29,6 +44,15 @@
          display: block;
          width: 100%;
          padding-top: 100%;
+      }
+      @media @bw1660 {
+         width: 181px;
+      }
+      @media @bw1340 {
+         width: 220px;
+      }
+      @media @bw768 {
+         width: 146px;
       }
    }
    &__img {
@@ -85,7 +109,10 @@
       align-items: center;
       min-height: 25px;
       margin-top: 2px;
-
+      @media @bw768 {
+         margin-top: 0;
+         height: 25px
+      }
    }
    &__title {
       margin: 0;
@@ -98,5 +125,8 @@
    
    &__btn-basket {
       padding-bottom: 15px;
+      @media @bw768 {
+         padding-bottom: 0;
+      }
    }
 }

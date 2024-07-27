@@ -343,9 +343,6 @@
       });
    }
 
-   //Фильтр на странице Каталог
-   
-
    //слайдер-детальная страница
    const swipers = document.querySelectorAll(".js-swiper");
    swipers.forEach(function (swpr) {
@@ -371,11 +368,13 @@
          }
       });
    });
-
+   
    //попап
    const eventPP = document.querySelector("#js-productPP");
    if (eventPP) {
       const eventOpenBtn = document.querySelector("#js-eventOpenBtn");
+      
+      ;
 
       const closeEventPP = function (event) {
          function close() {
@@ -403,8 +402,7 @@
       });
    }
 
-   //иконки 
-
+   //иконки в header
    const item1 = $(".nav-icon1");
    const item2 = $(".nav-icon2");
    
@@ -424,10 +422,5 @@
          item2.css("fill", "");
       });
    }
-
-   
-
-   
-   
 
 }) ();

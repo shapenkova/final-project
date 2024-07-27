@@ -33,17 +33,18 @@
          }
       });
    });
-
+   
    //попап
    const eventPP = document.querySelector("#js-productPP");
    if (eventPP) {
       const eventOpenBtn = document.querySelector("#js-eventOpenBtn");
-
+      const hideButton = document.querySelector(".product__breadcrumbs");
       const closeEventPP = function (event) {
          function close() {
             document.removeEventListener("keyup", closeEventPP);
             eventPP.removeEventListener("click", closeEventPP);
             root.classList.remove("show-product-pp");
+            hideButton.classList.remove("hidden");
          }
          switch (event.type) {
             case "keyup":
@@ -60,11 +61,34 @@
       };
       eventOpenBtn.addEventListener("click", function () {
          root.classList.add("show-product-pp");
+         hideButton.classList.add("hidden");
          document.addEventListener("keyup", closeEventPP);
          eventPP.addEventListener("click", closeEventPP);
       });
    }
+   const heartColor = document.querySelector('.product-card__icon-heart');
+   if(heartColor) {
+      heartColor.style.fill = "#0154bb";
+   }
+   
+   //счетчик количество
+   const increaseBtn = document.querySelector('#increaseBtn');
+   const decreaseBtn = document.querySelector('#decreaseBtn');
+   const cardQty = document.querySelector('#cardQty');
 
+   let quantity = 1;
+   increaseBtn.addEventListener('click', function() {
+      quantity++;
+      cardQty.textContent = quantity; 
+   });
+   decreaseBtn.addEventListener('click', function() {
+      if (quantity > 1) { 
+         quantity--;
+         cardQty.textContent = quantity; 
+      }
+   });
+
+   //иконки в шапке
    const item1 = $(".nav-icon1");
    const item2 = $(".nav-icon2");
    

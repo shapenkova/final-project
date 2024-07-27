@@ -11,26 +11,55 @@
    word-wrap: break-word;
 
    h4 {
-      margin: 60px 0 30px 0;
+      margin: 60px 0 30px;
       color: @black;
       font-family: @font1;
       font-size: 18px;
       font-weight: @font_weight4;
+      @media @bw1340 {
+         margin: 60px 0 25px;
+         font-size: 16px;
+         line-height: 1.56;
+      }
    }
    h2 {
-      margin: 70px 0 30px 0;
+      margin: 72px 0 24px;
       color: @black;
       font-family: @font4;
       font-size: 40px;
       font-weight: @font_weight5;
       letter-spacing: 0.05em;
+      @media @bw1660 {
+         margin: 70px 0 25px;
+      }
+      @media @bw1340 {
+         margin: 55px 0 23px;
+         font-size: 36px;
+      }
+      @media @bw768 {
+         width: 100%;
+         max-width: 184px;
+         margin: 60px 0 31px;
+         font-size: 30px;
+         line-height: 1;
+      }
    }
 
    p {
       width: 100%;
       max-width: 539px;
-      margin: 0 0 40px 0;
+      margin: 0 0 40px;
       font-family: @font1;
+      @media @bw1660 {
+         max-width: 484px;
+         margin: 0 0 45px;
+      }
+      @media @bw1340 {
+         max-width: 708px;
+         margin: 0 0 40px;
+         font-size: 16px;
+         line-height: 1.377;
+      }
    }
    ul,
    ol {
@@ -39,11 +68,19 @@
       margin: 0;
       list-style: none;
       font-family: @font1;
+      color: @black;
+      font-size: 18px;
+      font-weight: @font_weight2;
+      line-height: 1.388;
+      @media @bw1340 {
+         font-size: 16px;
+         line-height: 1.377;
+      }
    }
    ul > li {
       box-sizing: border-box;
       position: relative;
-      padding-left: 15px;
+      padding-left: 20px;
       &::before {
          content: "";
          display: block;
@@ -67,7 +104,7 @@
          content: counter(li) + ". ";
          box-sizing: border-box;
          display: inline-block;
-         min-width: 20px;
+         min-width: 10px;
          color: @black;
          white-space: pre;
       }
