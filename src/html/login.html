@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="ru" >
+<html lang="ru">
 <head>
    @@include('blocks/head.html')
-   
 </head>
 <body>
    <!-- Шапка сайта -->
@@ -14,14 +13,13 @@
             <div class="login__container">
                <h2 class="login__title section-title">Регистрация</h2>
                <div class="login__desc">
-                  <p class="login__desc-text">Уже есть авторизованный аккаунт?</p>
+                  <p class="login__desc-text">Уже есть авторизованный&nbsp;аккаунт?</p>
                   <a href="#" class="login__link">Войти</a>
                </div>
                <div class="login__wrapper">
                   <form class="login__form form" id="js-LoginForm">
-
                      <div class="form__box">
-                        <label class="field form__field form__field--w50">
+                        <label class="field form__field form__field--w50" id="email">
                            <span class="field__label field__label--red">E-mail</span>
                            <input 
                               class="field__input" 
@@ -31,7 +29,7 @@
                               required 
                            />
                         </label>
-                        <label class="field form__field form__field--w50 form__field1">
+                        <label class="field form__field form__field--w50" id="first-name">
                            <span class="field__label field__label--red">Имя</span>
                            <input 
                               class="field__input" 
@@ -41,28 +39,7 @@
                               required 
                            />
                         </label>
-                        <label class="field form__field form__field--w50 ">
-                           <span class="field__label">Телефон</span>
-                           <input 
-                              class="field__input js-mobileMask" 
-                              type="tel" 
-                              placeholder="Укажи свой телефон" 
-                              name="phone"
-                           />
-                        </label>
-                        <label class="field form__field form__field--w50 form__field1">
-                           <span class="field__label">Фамилия</span>
-                           <input 
-                              class="field__input" 
-                              type="text" 
-                              placeholder="Укажи фамилию" 
-                              name="last_name" 
-                           />
-                        </label>
-                     </div>
-
-                     <div class="form__box">
-                        <label class="field form__field form__field--w50">
+                        <label class="field form__field form__field--w50" id="password">
                            <span class="field__label field__label--red">Пароль</span>
                            <input 
                               class="field__input" 
@@ -72,7 +49,7 @@
                               required 
                            />
                         </label>
-                        <label class="field form__field form__field--w50">
+                        <label class="field form__field form__field--w50" id="confirm-password">
                            <span class="field__label field__label--red">Подтверждение пароля</span>
                            <input 
                               class="field__input" 
@@ -82,24 +59,37 @@
                               required 
                            />
                         </label>
+                        <label class="field form__field form__field--w50 " id="phone">
+                           <span class="field__label">Телефон</span>
+                           <input 
+                              class="field__input js-mobileMask" 
+                              type="tel" 
+                              placeholder="Укажи свой телефон" 
+                              name="phone"
+                           />
+                        </label>
+                        <label class="field form__field form__field--w50" id="last-name">
+                           <span class="field__label">Фамилия</span>
+                           <input 
+                              class="field__input" 
+                              type="text" 
+                              placeholder="Укажи фамилию" 
+                              name="last_name" 
+                           />
+                        </label>
                      </div>
-
-                     <div class="form__box">
-                        
+                     <div class="form__box2">
                         <div class="form__field field  form__group--w50 form__group--w51 custom-select" >
                            <h6 class="field__title custom-title">Страна</h6>
-                        
                            <select 
                               class="field__select js-selectric" 
                               name="amount" 
                               id="ajax"
                            >
-                           
                            </select>
-                           
                         </div>
                         <div class="form__field field js-dateField form__group--w50">
-                           <h6 class="field__title">Дата рождения</h6>
+                           <h6 class="field__title field__titleDate">Дата рождения</h6>
                            <div class="field__date">
                               <div class="field__date-inputs">
                                  <input
@@ -135,28 +125,26 @@
                               />
                            </div>
                         </div>   
-                     </div>
-                        
-                     <div class="form__check check">
-                        <label class="check__item field--err">
+                     </div>   
+                     <div class="form__checkAgree checkAgree">
+                        <label class="checkAgree__item field--err">
                            <input 
-                              id="form__check" 
+                              id="form__checkAgree" 
                               type="checkbox" 
                               name="agree" 
-                              class="check__input" 
+                              class="checkAgree__input" 
                               required 
                               checked
                            />
-                           <span class="check__mark login__form-mark"></span>
-                           <span class="check__label check__label-text">
-                              Нажимая «Создать аккаунт», я подтверждаю, что ознакомился с положениями, указанными в статьях 
-                              <a href="#" class="check__link">Условия использования</a> и 
-                              <a href="#" class="check__link">Политика конфиденциальности.</a>
+                           <span class="checkAgree__mark login__form-mark"></span>
+                           <span class="checkAgree__label">
+                              Нажимая «Создать аккаунт», я&nbsp;подтверждаю, что ознакомился с&nbsp;положениями, указанными в&nbsp;статьях 
+                              <a href="#" class="checkAgree__link">Условия использования</a> и&nbsp;<a href="#" class="checkAgree__link">Политика конфиденциальности.</a>
                            </span>
                         </label>
                      </div>
                      <div class="form__btn">
-                        <button type="submit" class="form__btn-create" id="jsFormCreateBtn">
+                        <button type="submit" class="form__btn-create btn" id="jsFormCreateBtn">
                            Создать аккаунт
                         </button>
                      </div>
@@ -164,7 +152,6 @@
                </div>
             </div>
          </section>
-         </div>
       </div>
    </main>
    <!-- Подвал сайта -->

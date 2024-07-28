@@ -16,16 +16,21 @@
    &::after {
       right: 0;
       transform: rotate(-45deg);
+      @media @bw1660 {
+         right: -2px;
+      }
       @media @bw500 {
-         right: 12px;
+         right: -1px;
       }
    }
    &::before {
       right: 4px;
       transform: rotate(45deg);
-      
+      @media @bw1660 {
+         right: 2px;
+      }
       @media @bw500 {
-         right: 17px;
+         right: 3px;
       }
       &:hover {
          margin-right: 10px;
@@ -75,6 +80,15 @@
       height: 100%;
       font-size: 16px;
       line-height: 1;
+      @media @bw1340 {
+         align-items: flex-end;
+         font-size: 14px;
+         padding: 0 0 7px 0;
+         margin: 0;
+      }
+      @media @bw768 {
+         padding: 0 0 5px 0;
+      }
       @media @bw400 {
          font-size: 14px;
       }
@@ -95,6 +109,9 @@
    & li {
       padding: 15px 20px;
       font-size: 16px;
+      @media @bw1340 {
+         font-size: 14px;
+      }
       &::before {
          background-color: transparent;
       }
@@ -128,6 +145,9 @@
    width: 484px;
    box-shadow: 0 0 50px 0 @shadow;
    background-color: @white;
+   @media @bw768 {
+      width: 300px;
+   }
 }
 .custom-select select {
    width: 100%;
