@@ -45,7 +45,7 @@
          function close() {
             document.removeEventListener("keyup", closeEventPP);
             filterBtn.removeEventListener("click", closeEventPP);
-            root.classList.remove("show-filter-pp");
+            root.classList.remove("show-product-pp");
          }
       switch (event.type) {
          case "keyup":
@@ -61,7 +61,7 @@
          }
       };
       filterBtn.addEventListener("click", function () {
-         root.classList.add("show-filter-pp");
+         root.classList.add("show-product-pp");
          document.addEventListener("keyup", closeEventPP);
          filterForm.addEventListener("click", closeEventPP);
       });
@@ -74,8 +74,8 @@
       });
    }
 
-   let buttons = Array.from(document.querySelectorAll('.catalog-card__btn-heart'));
-   let buttons2 = Array.from(document.querySelectorAll('.catalog-card__btn-basket'));
+   let buttons = Array.from(document.querySelectorAll('.catalog-card__btn--heart'));
+   let buttons2 = Array.from(document.querySelectorAll('.catalog-card__btn--basket'));
    const qtyDisplay = document.querySelector('.page-header__qty');
    const qtyDisplay2 = document.querySelector('.page-header__qty2');
    let counter = 0;
@@ -94,13 +94,14 @@
             counter--;
             button.classList.remove('active');
          } else {
-            counter++;
+            counter++; 
             button.classList.add('active');
          }
          qtyDisplay.textContent = counter;
-         let svg = document.querySelector('.nav-icon1');
+         let svg = document.querySelector('.page-header__nav--heart');
          if (svg) {
             svg.style.fill = counter > 0 ? '#1066d0' : 'transparent';
+            svg.style.color = counter > 0 ? '#1066d0' : '#111';
          }
          updateQtyDisplay();
       });
@@ -108,10 +109,11 @@
       
    buttons.forEach(button => {
       button.addEventListener('click', function() {
-         let svg = this.querySelector('.svgElement1');
+         let svg = this.querySelector('.catalog-card__icon1');
          if (svg) {
             let fill = svg.getAttribute('fill');
             svg.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
+            svg.style.color = counter > 0 ? '#1066d0' : '#111';
          }
       });
    });
@@ -126,19 +128,21 @@
             button.classList.add('active');
          }
          qtyDisplay2.textContent = counter2;
-         let svg2 = document.querySelector('.nav-icon2');
+         let svg2 = document.querySelector('.page-header__nav--basket');
          if (svg2) {
             svg2.style.fill = counter2 > 0 ? '#1066d0' : 'transparent';
+            svg2.style.color = counter > 0 ? '#1066d0' : '#111';
          }
          updateQtyDisplay2();
       });
    });
    buttons2.forEach(button => {
       button.addEventListener('click', function() {
-         let svg2 = this.querySelector('.svgElement2');
+         let svg2 = this.querySelector('.catalog-card__icon2');
          if (svg2) {
             let fill = svg2.getAttribute('fill');
             svg2.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
+            svg2.style.color = counter > 0 ? '#1066d0' : '#111';
          }
       });
    });

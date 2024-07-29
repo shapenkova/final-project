@@ -175,6 +175,9 @@
 
 .item--gol {
    background-color: @goluboy;
+   @media @bw1660 {
+      background-color: @orange;
+   }
 }
 .item--yellow {
    background-color: @zheltyy;
@@ -184,9 +187,32 @@
 }
 .item--orange {
    background-color: @orange;
+   @media @bw1660 {
+      background-color: @goluboy;
+   }
 }
-// [data-index="1"] {
+// #el1 {
 //    @media @bw1660 {
-//       order: -1;
+//       order: 2;
+//    }
+// }
+// #el2 {
+//    @media @bw1660 {
+//       order: 0;
+//    }
+// }
+// #el3 {
+//    @media @bw1660{
+//       order: 0;
+//    }
+// }
+// #el4 {
+//    @media @bw1660 {
+//       order: 1;
+//    }
+// }
+// #el5 {
+//    @media @bw1660 {
+//       order: 5;
 //    }
 // }

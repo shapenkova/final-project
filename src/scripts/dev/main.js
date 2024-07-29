@@ -8,113 +8,6 @@
       root.classList.toggle("show-nav");
    });
 
-   //слайдер №1 на декстопе
-   const swiper1 = document.querySelectorAll(".js-swiper1");
-      swiper1.forEach(function (swpr) {
-         new Swiper (swpr, {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            initialSlide: 2,
-            allowTouchMove: true,
-            grabCursor: true,
-            keyboard: {
-               enabled: true,
-            },
-            pagination: {
-               el: ".swiper-pagination",
-               clickable: true,
-               renderBullet: function (index, className) {
-                  let customIndex = [82, 85, 87, 88, 89];
-                  return '<span class="' + className + '">' + customIndex[index] + "</span>";
-               },
-            },
-            on: {
-               slideChange: function () {
-                  let year = document.querySelector('.collection__button-year');
-                  let currentSlideIndex = this.activeIndex;
-                  if (currentSlideIndex === 0) {
-                     year.textContent = '1982'; 
-                  } else if (currentSlideIndex === 1) {
-                     year.textContent = '1985'; 
-                  } else if (currentSlideIndex === 2) {
-                     year.textContent = '1987'; 
-                  } else if (currentSlideIndex === 3) {
-                     year.textContent = '1988'; 
-                  } else if (currentSlideIndex === 4) {
-                     year.textContent = '1989';
-                  }
-               }
-            }
-      });
-   });
-
-   //слайдер №2 на декстопе
-   const paginationText = [
-      "Lucky Strike, 1987",
-      "Statue of Liberty, 1986",
-      "Andy Mouse, 1986",
-      "Crack Down, 1986",
-      "Paris poster, 1986"
-   ];
-
-   $('#js-sliderSlick').slick({
-      slidesToShow: 4,
-      centerMode: true,
-      variableWidth: true,
-      initialSlide: 2,
-      centerPadding: '0px',
-      speed: 1000,
-      prevArrow: $('.slick-prev'),
-      nextArrow: $('.slick-next'),
-      responsive: [
-         {
-            breakpoint: 1660,
-            settings: {
-               slidesToShow: 3,
-               
-            }
-         },
-         {
-            breakpoint: 1020,
-            settings: {
-               slidesToShow: 1,
-            }
-         }
-      ]
-   });
-      
-   $('#js-sliderSlick').on('afterChange', function(event, slick, currentSlide){
-      $('#paginationText').text(paginationText[currentSlide]);
-   });
-
-
-   //продолжить)
-   
-//    function updateSliderPosition() {
-//       const sliderd = $(".slick-track");
-//       const items = sliderd.children(); // Получаем элементы слайдера
-//       console.log(items)
-//       if ($(window).width() <= 1660) {
-//           if (items.length === 14) {
-//               // Перемещаем пятый элемент перед первым
-//               items.eq(5).insertBefore(items.eq(3));
-//           }
-//       } else {
-//           // Если ширина больше 1340px, возвращаем порядок слайдов в исходное состояние, если необходимо
-//           // Здесь можно реализовать логику для возврата слайдов в исходное состояние
-//       }
-//   }
-
-//   // Запускаем функцию при загрузке страницы и при изменении размера окна
-//   $(document).ready(function() {
-//       updateSliderPosition();
-//       $(window).resize(function() {
-//           updateSliderPosition();
-//       });
-//   });
-
-
-
    //карта
    const contactsMap = document.querySelector("#js-contactsMap");
    if (contactsMap) {
@@ -323,104 +216,69 @@
          zoom: 15,
          zoomControl: true,
          zoomControlOptions: {
-         position: google.maps.ControlPosition.RIGHT_BOTTOM
-      }
+            position: google.maps.ControlPosition.RIGHT_BOTTOM
+         }
       };
       const map = new google.maps.Map(contactsMap, mapOptions);
-
       const point = new google.maps.LatLng(56.4902500913657,84.94910993794092);
-      const mapPin = new google.maps.MarkerImage(
-         "/assets/images/mark.jpg",
-         new google.maps.Size(74, 63), //size
-         new google.maps.Point(0, 0),  //origin point
-         new google.maps.Point(0, 63)  //offset point
-      );
-      new google.maps.Marker({
-         position: point,
-         map: map,
-         icon: mapPin,
-         title: "Collection"
+
+      function getMarkerImage() {
+         const screenWidth = window.innerWidth;
+
+         if (screenWidth > 1340) {
+               return new google.maps.MarkerImage(
+                  "/assets/images/mark-1.png",
+                  new google.maps.Size(74, 63),  
+                  new google.maps.Point(0, 0),  
+                  new google.maps.Point(0, 63)  
+               );
+         } else if (screenWidth <= 768) {
+               return new google.maps.MarkerImage(
+                  "/assets/images/mark-3.png",
+                  new google.maps.Size(37, 34),  
+                  new google.maps.Point(0, 0),   
+                  new google.maps.Point(0, 34) 
+               );
+         } else {
+               return new google.maps.MarkerImage(
+                  "/assets/images/mark-2.png",
+                  new google.maps.Size(67, 57), 
+                  new google.maps.Point(0, 0),  
+                  new google.maps.Point(0, 57) 
+               );
+         }
+      }
+
+      const marker = new google.maps.Marker({
+            position: point,
+            map: map,
+            icon: getMarkerImage(),
+            title: "Collection"
+      });
+
+      window.addEventListener('resize', () => {
+            marker.setIcon(getMarkerImage());
       });
    }
-
-   //слайдер-детальная страница
-   const swipers = document.querySelectorAll(".js-swiper");
-   swipers.forEach(function (swpr) {
-      new Swiper(swpr, {
-         updateOnWindowResize: true,
-         slidesPerView: "auto",
-         freeMode: true,
-         spaceBetween: 0,
-         speed: 500,
-         grabCursor: true,
-         allowTouchMove: true,
-         keyboard: {
-            enabled: true,
-         },
-         pagination: {
-            el: ".swiper-pagination",
-            clickable: true
-         },
-         navigation: {
-            nextEl: ".swiper-arrow-next",
-            prevEl: ".swiper-arrow-prev",
-            disabledClass: "arrow--disabled"
-         }
-      });
-   });
-   
-   //попап
-   const eventPP = document.querySelector("#js-productPP");
-   if (eventPP) {
-      const eventOpenBtn = document.querySelector("#js-eventOpenBtn");
-      
-      ;
-
-      const closeEventPP = function (event) {
-         function close() {
-            document.removeEventListener("keyup", closeEventPP);
-            eventPP.removeEventListener("click", closeEventPP);
-            root.classList.remove("show-product-pp");
-         }
-         switch (event.type) {
-            case "keyup":
-               if (event.key === "Escape" || event.keyCode === 27) close();
-               break;
-            case "click":
-               if (
-                  event.target === this ||
-                  event.target.classList.contains("js-ppCloseBtn")
-               )
-               close();
-               break;
-         }
-      };
-      eventOpenBtn.addEventListener("click", function () {
-         root.classList.add("show-product-pp");
-         document.addEventListener("keyup", closeEventPP);
-         eventPP.addEventListener("click", closeEventPP);
-      });
-   }
-
    //иконки в header
-   const item1 = $(".nav-icon1");
-   const item2 = $(".nav-icon2");
+   // const item1 = $(".page-header__nav--heart");
+   // const item2 = $(".page-header__nav--basket");
    
-   if (item1.length) {
-      item1.on("mouseover", function() {
-         item1.css("fill", "#0154bb");
-      });
-      item1.on("mouseout", function() {
-         item1.css("fill", "");
-      });
-   }
-   if (item2.length) {
-      item2.on("mouseover", function() {
-         item2.css("fill", "#0154bb"); 
-      });
-      item2.on("mouseout", function() {
-         item2.css("fill", "");
-      });
-   }
+   // if (item1.length) {
+   //    item1.on("mouseover", function() {
+   //       item1.css("fill", "#0154bb");
+   //    });
+   //    item1.on("mouseout", function() {
+   //       item1.css("fill", "");
+   //    });
+   // }
+   // if (item2.length) {
+   //    item2.on("mouseover", function() {
+   //       item2.css("fill", "#0154bb"); 
+   //    });
+   //    item2.on("mouseout", function() {
+   //       item2.css("fill", "");
+   //    });
+   // }
 
 }) ();

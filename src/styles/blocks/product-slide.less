@@ -20,16 +20,10 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 18px 29px 18px 31px;
+      padding: 41px 29px 15px 31px;
       color: @black;
       text-decoration: none;
       cursor: pointer;
-      @media @bw1340 {
-         padding: 18px 29px 15px 31px;
-      }
-      @media @bw768 {
-         padding: 18px 29px 17px 31px;
-      }
    }
    &__picture {
       position: relative;
@@ -67,7 +61,6 @@
 
    &__btn {
       flex-shrink: 0;
-      position: relative;
       display: inline-block;
       justify-content: center;
       align-items: center;
@@ -84,15 +77,24 @@
          color: @hover_bl;
       }
    }
-   &__icon1 {
-      width: 16px;
-      height: 14px;
-   }
+   &__icon1,
    &__icon2 {
       width: 24px;
       height: 24px;
    }
-   
+   &__btn,
+   &__btn--basket {
+      position: absolute;
+      top: 21px; 
+      right: 29px; 
+      @media @bw1340 {
+         top: 18px;
+      }
+   }
+   &__btn--basket {
+      top: auto;
+      bottom: 20px;
+   }
    &__price {
       min-height: 25px;
       margin: 0;
@@ -102,31 +104,12 @@
       font-weight: @font_weight4;
       line-height: 1.25;
    }
-   &__caption {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 25px;
-      margin-top: 2px;
-      @media @bw768 {
-         margin-top: 0;
-         height: 25px
-      }
-   }
    &__title {
-      margin: 0;
+      margin: 4px 0 0;
       color: @black;
       font-family: @font1;
       font-size: 16px;
       font-weight: @font_weight3;
       line-height: 1.56;
-   }
-   
-   &__btn-basket {
-      padding-bottom: 15px;
-      @media @bw768 {
-         padding-bottom: 0;
-      }
    }
 }

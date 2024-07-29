@@ -5,7 +5,7 @@
    width: 359px;
    max-width: 100%;
    min-width: 280px;
-   padding: 18px 29px 14px 30px;
+   padding: 42px 29px 14px 30px;
    border: 1px solid @contur;
    transition: box-shadow 0.2s, background 0.2s;
    &:hover {
@@ -14,14 +14,13 @@
    }
    @media @bw1660 {
       width: 323px;
-      padding: 18px 29px 14px 30px;
    }
    @media @bw1340 {
       width: 354px;
-      padding: 18px 29px 14px 30px;
+      padding: 41px 29px 14px 30px;
    }
    @media @bw768 {
-      padding: 17px 29px 14px 31px;
+      padding: 41px 29px 14px 30px;
       border-bottom: 0;
       &:last-child {
          border-bottom: 1px solid @contur;
@@ -72,7 +71,6 @@
 
    &__btn {
       flex-shrink: 0;
-      position: relative;
       display: inline-block;
       justify-content: center;
       align-items: center;
@@ -89,15 +87,25 @@
          color: @hover_bl;
       }
    }
-   &__icon1 {
-      width: 24px;
-      height: 24px;
-   }
+   &__icon1,
    &__icon2 {
       width: 24px;
       height: 24px;
    }
-   
+   &__btn--heart,
+   &__btn--basket {
+      position: absolute;
+      top: 17px; 
+      right: 29px; 
+      @media @bw1340 {
+         top: 16px;
+         right: 28px;
+      }
+   }
+   &__btn--basket {
+      top: auto;
+      bottom: 18px;
+   }
    &__price {
       min-height: 25px;
       margin: 0 0 auto;
@@ -106,21 +114,9 @@
       font-size: 20px;
       font-weight: @font_weight4;
       line-height: 1.25;
-      // @media @bw768 {
-      //    margin-bottom: 2px;
-      // }
-   }
-   &__caption {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: 3px;
-      @media @bw768 {
-         margin-top: 0;
-      }
    }
    &__title {
-      margin: 0;
+      margin: 4px 0 0;
       color: @black;
       font-family: @font1;
       font-size: 16px;
@@ -134,11 +130,5 @@
       margin: 0;
       color: @gray_sign;
       font-weight: @font_weight2;
-   }
-   &__btn-basket {
-      margin-bottom: 1px;
-      @media @bw768 {
-         margin-bottom: 4px;
-      }
    }
 }

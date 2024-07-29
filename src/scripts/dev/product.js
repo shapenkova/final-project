@@ -1,13 +1,6 @@
 (function() {
    "use strict";
-
-   //навигационное меню
    const root = document.documentElement;
-   const navToggle = document.querySelector("#js-navToggle");
-   navToggle.addEventListener("click", function () {
-      root.classList.toggle("show-nav");
-   });
-
    //слайдер-детальная страница
    const swipers = document.querySelectorAll(".js-swiper");
    swipers.forEach(function (swpr) {
@@ -88,24 +81,79 @@
       }
    });
 
-   //иконки в шапке
-   const item1 = $(".nav-icon1");
-   const item2 = $(".nav-icon2");
-   
-   if (item1.length) {
-      item1.on("mouseover", function() {
-         item1.css("fill", "#0154bb");
+
+   let buttons = Array.from(document.querySelectorAll('.product-slide__btn--heart'));
+   let buttons2 = Array.from(document.querySelectorAll('.product-slide__btn--basket'));
+   const qtyDisplay = document.querySelector('.page-header__qty');
+   const qtyDisplay2 = document.querySelector('.page-header__qty2');
+   let counter = 0;
+   let counter2 = 0;
+   const updateQtyDisplay = () => {
+      qtyDisplay.style.display = counter > 0 ? 'inline' : 'none';
+   };
+
+   const updateQtyDisplay2 = () => {
+      qtyDisplay2.style.display = counter2 > 0 ? 'inline' : 'none';
+   };
+
+   buttons.forEach(button => {
+      button.addEventListener('click', function() {
+         if (button.classList.contains('active')) {
+            counter--;
+            button.classList.remove('active');
+         } else {
+            counter++; 
+            button.classList.add('active');
+         }
+         qtyDisplay.textContent = counter;
+         let svg = document.querySelector('.page-header__nav--heart');
+         if (svg) {
+            svg.style.fill = counter > 0 ? '#1066d0' : 'transparent';
+            svg.style.color = counter > 0 ? '#1066d0' : '#111';
+         }
+         updateQtyDisplay();
       });
-      item1.on("mouseout", function() {
-         item1.css("fill", "");
+   });
+      
+   buttons.forEach(button => {
+      button.addEventListener('click', function() {
+         let svg = this.querySelector('.product-slide__icon1');
+         if (svg) {
+            let fill = svg.getAttribute('fill');
+            svg.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
+            svg.style.color = counter > 0 ? '#1066d0' : '#111';
+         }
       });
-   }
-   if (item2.length) {
-      item2.on("mouseover", function() {
-         item2.css("fill", "#0154bb"); 
+   });
+
+   buttons2.forEach(button => {
+      button.addEventListener('click', function() {
+         if (button.classList.contains('active')) {
+            counter2--;
+            button.classList.remove('active');
+         } else {
+            counter2++;
+            button.classList.add('active');
+         }
+         qtyDisplay2.textContent = counter2;
+         let svg2 = document.querySelector('.page-header__nav--basket');
+         if (svg2) {
+            svg2.style.fill = counter2 > 0 ? '#1066d0' : 'transparent';
+            svg2.style.color = counter > 0 ? '#1066d0' : '#111';
+         }
+         updateQtyDisplay2();
       });
-      item2.on("mouseout", function() {
-         item2.css("fill", "");
+   });
+   buttons2.forEach(button => {
+      button.addEventListener('click', function() {
+         let svg2 = this.querySelector('.product-slide__icon2');
+         if (svg2) {
+            let fill = svg2.getAttribute('fill');
+            svg2.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
+            svg2.style.color = counter > 0 ? '#1066d0' : '#111';
+         }
       });
-   }
+   });
+   updateQtyDisplay();
+   updateQtyDisplay2();
 }) ();
