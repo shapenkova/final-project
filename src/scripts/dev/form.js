@@ -48,7 +48,6 @@
       $(this).closest('.selectric-wrapper').removeClass('open4');
    });
 
-
    //календарь
    const dateField = $(".js-dateField");
    if (dateField.length) {
@@ -60,20 +59,19 @@
          const dateConfig = {
             autoClose: true,
             navTitles: {
-            days: "MMMM <i>yyyy</i>",
+               days: "MMMM <i>yyyy</i>",
             
-         },
-         onSelect: function ({ date }) {
-            dateDay.val(date ? ("0" + date.getDate()).slice(-2) : "");
-            dateMonth.val(date ? ("0" + (date.getMonth() + 1)).slice(-2) : "");
-            dateYear.val(date ? date.getFullYear() : "");
-         }
-      };
-      new AirDatepicker(dateInput[0], dateConfig);
-      
+            },
+            onSelect: function ({ date }) {
+               dateDay.val(date ? ("0" + date.getDate()).slice(-2) : "");
+               dateMonth.val(date ? ("0" + (date.getMonth() + 1)).slice(-2) : "");
+               dateYear.val(date ? date.getFullYear() : "");
+            }
+         };
+         new AirDatepicker(dateInput[0], dateConfig);
       };
       $.each(dateField, function (i) {
          pickerInit($(this));
       });
-      }
+   }
 })()

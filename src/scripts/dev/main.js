@@ -260,6 +260,22 @@
             marker.setIcon(getMarkerImage());
       });
    }
+
+   const elem1 = $('.page-header__nav--heart');
+   const elem2 = $('.page-header__nav--basket');
+
+   elem1.on('click', function() {
+      if (elem1) {
+         elem1.css('fill', '#1066d0');
+         elem1.css('color', '#1066d0');
+      }
+   });
+   elem2.on('click', function() {
+      if (elem2) {
+         elem2.css('fill', '#1066d0');
+         elem2.css('color', '#1066d0');
+      }
+   });
    //иконки в header
    // const item1 = $(".page-header__nav--heart");
    // const item2 = $(".page-header__nav--basket");

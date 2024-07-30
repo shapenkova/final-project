@@ -50,7 +50,6 @@
    }
    & .selectric-items {
       display: block;
-      // margin-top: 5px;
       width: 100% !important;
    }
    .selectric .label {
@@ -69,22 +68,21 @@
    background-color: transparent;
    & .button {
       display: none;
-      
    }
    & .label {
+      box-sizing: border-box;
       display: flex;
       align-items: center;
-      box-sizing: border-box;
-      padding: 0 0 2px 0;
-      margin: 0 0 0 2px;
       height: 100%;
+      margin: 0 0 0 2px;
+      padding: 0 0 2px 0;
       font-size: 16px;
       line-height: 1;
       @media @bw1340 {
          align-items: flex-end;
-         font-size: 14px;
-         padding: 0 0 7px 0;
          margin: 0;
+         padding: 0 0 7px 0;
+         font-size: 14px;
       }
       @media @bw768 {
          padding: 0 0 5px 0;
@@ -96,10 +94,9 @@
    
 } 
 
-
 .selectric-items  {
-   border-radius: none;
    border: none;
+   border-radius: none;
    background-color: @gray_bg;
    overflow: hidden;
    & .selectric-scroll {
@@ -143,8 +140,8 @@
    top: 12px;
    left: -10px;
    width: 484px;
-   box-shadow: 0 0 50px 0 @shadow;
    background-color: @white;
+   box-shadow: 0 0 50px 0 @shadow;
    @media @bw768 {
       width: 300px;
    }
@@ -157,8 +154,7 @@
    background-color: @white;
 }
 .selectric-scroll {
-   max-height: 200px;
-   margin-right: 6px;
+   max-height: 206px;
 }
 .custom-title {
    transition: margin 0.2s;
@@ -170,10 +166,9 @@
    right: 15px;
 }
 .selectric-wrapper.open3::before {
-   right: 18px;
+   right: 19px;
 }
 .selectric-wrapper.open4::after,
 .selectric-wrapper.open4::before {
    top: 15px;
 }
-
