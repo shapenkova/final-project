@@ -23,7 +23,7 @@
          {
             breakpoint: 1660,
             settings: {
-               slidesToShow: 3,
+               slidesToShow: 2,
                
             }
          },
@@ -35,11 +35,10 @@
          }
       ]
    });
-      
+
    $('#js-sliderSlick').on('afterChange', function(event, slick, currentSlide){
       $('#paginationText').text(paginationText[currentSlide]);
    });
-
 
    //продолжить)
    
