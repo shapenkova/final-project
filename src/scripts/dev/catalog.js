@@ -9,13 +9,13 @@
 
    if (rangeSlider) {
       noUiSlider.create(rangeSlider, {
-      start: [650, 5000],
-		connect: true,
-		step: 1,
-      range: {
-			'min': [0],
-			'max': [5650]
-      }
+         start: [650, 5000],
+         connect: true,
+         step: 1,
+         range: {
+            'min': [0],
+            'max': [5650]
+         }
       });
 
       const input0 = document.querySelector('#input-0');
@@ -37,6 +37,27 @@
             setRangeSlider(index, e.currentTarget.value);
          });
       });
+
+      const updateSliderRange = () => {
+         let rangeMax;
+         if (window.innerWidth > 1920) {
+            rangeMax = 5650;
+         } else if (window.innerWidth > 768) {
+            rangeMax = 5650;
+         } else if (window.innerWidth > 320) {
+            rangeMax = 6050;
+         } else {
+            rangeMax = 6050;
+         }
+         rangeSlider.noUiSlider.updateOptions({
+            range: {
+               'min': 0,
+               'max': rangeMax
+            }
+         });
+      };
+
+      updateSliderRange(); 
    }
 
    if (filterForm) {
@@ -70,7 +91,7 @@
       const resetBtn = document.querySelector(".js-resetBtn");
       resetBtn.addEventListener("click", function () {
          jsForm.reset();
-         rangeSlider.noUiSlider.set([650, 5650]); 
+         rangeSlider.noUiSlider.set([650, 5000]); 
       });
    }
 
