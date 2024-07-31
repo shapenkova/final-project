@@ -8,13 +8,13 @@
    padding: 100px 45px 150px 0;
    
    @media @bw1660 {
-      padding: 100px 40px 127px;
+      padding: 100px 40px 137px;
    }
    @media @bw1340 {
-      padding: 40px 30px 95px;
+      padding: 40px 30px 94px;
    }
    @media @bw768 {
-      padding: 40px 20px 90px;
+      padding: 40px 20px 66px;
    }
    &__title {
       margin: 0 auto;
@@ -69,6 +69,11 @@
       &:last-child {
          margin-top: 0;
          margin-bottom: 0;
+         @media @bw768 {
+            width: 274px;
+            height: 197px;
+            margin: 0;
+         }
       }
       &:hover {
          border-left-color: @green;
@@ -170,8 +175,10 @@
    }
 }
 #js-contactsMap {
+   box-sizing: border-box;
    width: 862px;
    height: 623px;
+   border: 6px solid @black;
    @media @bw1660 {
       width: 57.91vw;
       height: 561px;
@@ -180,6 +187,7 @@
       width: 92.18vw;
       height: 511px;
       margin-bottom: 20px;
+      border: 3px solid @black;
       order: -1;
    }
    @media @bw768 {

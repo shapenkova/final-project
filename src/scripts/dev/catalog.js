@@ -45,7 +45,7 @@
          function close() {
             document.removeEventListener("keyup", closeEventPP);
             filterBtn.removeEventListener("click", closeEventPP);
-            root.classList.remove("show-product-pp");
+            root.classList.remove("show-filter-pp");
          }
       switch (event.type) {
          case "keyup":
@@ -61,7 +61,7 @@
          }
       };
       filterBtn.addEventListener("click", function () {
-         root.classList.add("show-product-pp");
+         root.classList.add("show-filter-pp");
          document.addEventListener("keyup", closeEventPP);
          filterForm.addEventListener("click", closeEventPP);
       });
@@ -70,7 +70,7 @@
       const resetBtn = document.querySelector(".js-resetBtn");
       resetBtn.addEventListener("click", function () {
          jsForm.reset();
-         rangeSlider.noUiSlider.set([650, 5000]); 
+         rangeSlider.noUiSlider.set([650, 5650]); 
       });
    }
 

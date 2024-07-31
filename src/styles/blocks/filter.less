@@ -8,8 +8,8 @@
       z-index: 110;
       box-sizing: border-box;
       display: none;
-      background-color: @gray_bg;
       padding: 60px 30px;
+      background-color: @gray_bg;
       overflow-y: auto;
    }
    @media @bw768 {
@@ -28,7 +28,6 @@
          right: 15px;
       }
    }
-
    &__container {
       position: relative;
       box-sizing: border-box;
@@ -52,7 +51,6 @@
       }
    }
 }
-
 .formFil {
    &__list-title {
       margin: 0 0 32px 0;
@@ -61,7 +59,7 @@
       font-size: 18px;
       font-weight: @font_weight4;
       line-height: 1.388;
-      transition: font-size 0.2s;
+      transition: font-size 0.3s;
       @media @bw1340 {
          margin: 0 0 24px 0;
          font-size: 16px;
@@ -145,8 +143,7 @@
       font-size: 16px;
       font-weight: @font_weight2;
       line-height: 1.56;
-   }
-   
+   }  
    &__apply {
       box-sizing: border-box;
       display: inline-block;
@@ -213,7 +210,6 @@
       }
    }
 }
-
 .radio {
    display: flex;
    flex-direction: column;
@@ -254,6 +250,7 @@
       &:last-child {
          margin-bottom: 0;
       }
+
       @media @bw1340 {
          padding-top: 0;
       }
@@ -261,7 +258,6 @@
          margin-bottom: 0;
       }
    }
-
    &__input {
       .is-hidden;
 
@@ -271,7 +267,6 @@
          }
       }
    }
-
    &__mark {
       position: absolute;
       left: 0;
@@ -287,7 +282,6 @@
       background-color: transparent;
       transition: background-color 0.2s;
    }
-
    &__label {
       margin-left: 20px;
       color: @black;
@@ -316,7 +310,6 @@
       gap: 16px 62px;
       width: 100%;
    }
-   
    &__item {
       position: relative;
       box-sizing: border-box;
@@ -346,6 +339,7 @@
             order: 1;
          }
       }
+
       @media @bw768 {
          margin-bottom: 0;
       }
