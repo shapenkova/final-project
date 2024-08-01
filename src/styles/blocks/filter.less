@@ -352,14 +352,18 @@
             &::after {
                content: "";
                position: absolute;
-               left: 5px;
-               bottom: 2px;
+               left: 6px;
+               bottom: 3px;
                display: block;
                width: 3px;
                height: 11px;
                border-bottom: 2px solid @black;
                border-right: 2px solid @black;
                transform: rotate(45deg);
+               @media @bw1340 {
+                  left: 5px;
+                  bottom: 2px;
+               }
             }
          }
       }
