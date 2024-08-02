@@ -232,7 +232,7 @@
                   new google.maps.Point(0, 0),  
                   new google.maps.Point(0, 63)  
                );
-         } else if (screenWidth <= 768) {
+         } else if (screenWidth < 768) {
                return new google.maps.MarkerImage(
                   "/assets/images/mark-3.png",
                   new google.maps.Size(37, 34),  
