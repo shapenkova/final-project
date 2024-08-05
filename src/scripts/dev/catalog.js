@@ -169,4 +169,5 @@
    });
    updateQtyDisplay();
    updateQtyDisplay2();
+
 })()

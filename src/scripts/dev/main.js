@@ -263,17 +263,33 @@
 
    const elem1 = $('.page-header__nav--heart');
    const elem2 = $('.page-header__nav--basket');
+   const elem3 = $('.page-header__nav--user');
 
    elem1.on('click', function() {
       if (elem1) {
          elem1.css('fill', '#1066d0');
          elem1.css('color', '#1066d0');
+      }  else {
+         elem1.css('fill', 'transparent');
+         elem1.css('color', '#111');
       }
    });
    elem2.on('click', function() {
       if (elem2) {
          elem2.css('fill', '#1066d0');
          elem2.css('color', '#1066d0');
+      } else {
+         elem2.css('fill', 'transparent');
+         elem2.css('color', '#111');
+      }
+   });
+   elem3.on('click', function() {
+      if (elem3) {
+         elem3.css('fill', '#1066d0');
+         elem3.css('color', '#1066d0');
+      } else {
+         elem3.css('fill', 'transparent');
+         elem3.css('color', '#111');
       }
    });
    //иконки в header
@@ -297,4 +313,16 @@
    //    });
    // }
 
+   $('.page-header__catalog').on('click', function() {
+      window.location.href = 'catalog.html'; 
+   });
+
+   
+   $('#readArticle').on('click', function() {
+      window.location.href = 'haring.html'; 
+   });
+
+   $('.breadcrumbs__btn').on('click', function() {
+      window.location.href = 'index.html';
+   });
 }) ();

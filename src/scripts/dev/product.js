@@ -82,10 +82,12 @@
    });
 
 
-   let buttons = Array.from(document.querySelectorAll('.product-slide__btn--heart'));
-   let buttons2 = Array.from(document.querySelectorAll('.product-slide__btn--basket'));
+   const buttons = Array.from(document.querySelectorAll('.product-slide__btn--heart'));
+   const buttons2 = Array.from(document.querySelectorAll('.product-slide__btn--basket'));
    const qtyDisplay = document.querySelector('.page-header__qty');
    const qtyDisplay2 = document.querySelector('.page-header__qty2');
+   const svg = document.querySelector('.page-header__nav--heart');
+   const svg2 = document.querySelector('.page-header__nav--basket');
    let counter = 0;
    let counter2 = 0;
    const updateQtyDisplay = () => {
@@ -106,7 +108,6 @@
             button.classList.add('active');
          }
          qtyDisplay.textContent = counter;
-         let svg = document.querySelector('.page-header__nav--heart');
          if (svg) {
             svg.style.fill = counter > 0 ? '#1066d0' : 'transparent';
             svg.style.color = counter > 0 ? '#1066d0' : '#111';
@@ -136,10 +137,9 @@
             button.classList.add('active');
          }
          qtyDisplay2.textContent = counter2;
-         let svg2 = document.querySelector('.page-header__nav--basket');
          if (svg2) {
             svg2.style.fill = counter2 > 0 ? '#1066d0' : 'transparent';
-            svg2.style.color = counter > 0 ? '#1066d0' : '#111';
+            svg2.style.color = counter2 > 0 ? '#1066d0' : '#111';
          }
          updateQtyDisplay2();
       });
@@ -157,5 +157,8 @@
    updateQtyDisplay();
    updateQtyDisplay2();
 
-   
+   $('.product__breadcrumbs-btn').on('click', function() {
+      window.location.href = 'index.html';
+   });
+
 }) ();
