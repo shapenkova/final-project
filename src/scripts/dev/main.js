@@ -292,26 +292,6 @@
          elem3.css('color', '#111');
       }
    });
-   //иконки в header
-   // const item1 = $(".page-header__nav--heart");
-   // const item2 = $(".page-header__nav--basket");
-   
-   // if (item1.length) {
-   //    item1.on("mouseover", function() {
-   //       item1.css("fill", "#0154bb");
-   //    });
-   //    item1.on("mouseout", function() {
-   //       item1.css("fill", "");
-   //    });
-   // }
-   // if (item2.length) {
-   //    item2.on("mouseover", function() {
-   //       item2.css("fill", "#0154bb"); 
-   //    });
-   //    item2.on("mouseout", function() {
-   //       item2.css("fill", "");
-   //    });
-   // }
 
    $('.page-header__catalog').on('click', function() {
       window.location.href = 'catalog.html'; 

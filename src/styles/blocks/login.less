@@ -121,7 +121,7 @@
    }
 }
 .form {
-   padding: 0 10px;
+   padding: 0 11px;
    @media @bw1340 {
       padding: 0;
    }
@@ -148,7 +148,7 @@
    &__group {
       width: 100%;
       &--w50 {
-         width: calc(50% - 32px);
+         width: calc(50% - 30px);
          @media @bw1340 {
             width: calc(50% - 20px);
          }
@@ -388,6 +388,9 @@ input:focus {
       font-size: 16px;
       font-weight: @font_weight2;
       line-height: 1.388;
+      @media @bw1660 {
+         margin-left: 17px;
+      }
       @media @bw1340 {
          max-width: 606px;
          font-size: 14px;

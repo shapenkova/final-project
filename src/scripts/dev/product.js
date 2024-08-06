@@ -150,7 +150,7 @@
          if (svg2) {
             let fill = svg2.getAttribute('fill');
             svg2.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
-            svg2.style.color = counter > 0 ? '#1066d0' : '#111';
+            svg2.style.color = counter2 > 0 ? '#1066d0' : '#111';
          }
       });
    });

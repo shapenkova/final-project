@@ -5,6 +5,7 @@
    width: 359px;
    max-width: 100%;
    min-width: 280px;
+   margin: 0;
    padding: 42px 29px 14px 30px;
    border: 1px solid @contur;
    transition: box-shadow 0.2s, background 0.2s;
@@ -12,15 +13,14 @@
       background: @gray_bg;
       box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
    }
+
    @media @bw1660 {
       width: 323px;
    }
    @media @bw1340 {
       width: 354px;
-      padding: 41px 29px 14px 30px;
    }
    @media @bw768 {
-      padding: 41px 29px 14px 30px;
       border-bottom: 0;
       &:last-child {
          border-bottom: 1px solid @contur;
@@ -96,7 +96,10 @@
    &__btn--basket {
       position: absolute;
       top: 17px; 
-      right: 29px; 
+      right: 25px; 
+      @media @bw1660 {
+         right: 28px;
+      }
       @media @bw1340 {
          top: 16px;
          right: 28px;

@@ -40,7 +40,7 @@
 
       const updateSliderRange = () => {
          let rangeMax;
-         if (window.innerWidth > 1920) {
+         if (window.innerWidth >= 1920) {
             rangeMax = 5650;
          } else if (window.innerWidth > 768) {
             rangeMax = 5650;
@@ -152,7 +152,7 @@
          let svg2 = document.querySelector('.page-header__nav--basket');
          if (svg2) {
             svg2.style.fill = counter2 > 0 ? '#1066d0' : 'transparent';
-            svg2.style.color = counter > 0 ? '#1066d0' : '#111';
+            svg2.style.color = counter2 > 0 ? '#1066d0' : '#111';
          }
          updateQtyDisplay2();
       });
@@ -163,7 +163,7 @@
          if (svg2) {
             let fill = svg2.getAttribute('fill');
             svg2.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
-            svg2.style.color = counter > 0 ? '#1066d0' : '#111';
+            svg2.style.color = counter2 > 0 ? '#1066d0' : '#111';
          }
       });
    });

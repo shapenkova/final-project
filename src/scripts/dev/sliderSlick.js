@@ -9,7 +9,6 @@
       "Crack Down, 1986",
       "Paris poster, 1986"
    ];
-
    
    $('#js-sliderSlick').slick({
       slidesToShow: 4,
