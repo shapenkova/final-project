@@ -70,92 +70,77 @@
    const cardQty = document.querySelector('#cardQty');
 
    let quantity = 1;
-   increaseBtn.addEventListener('click', function() {
-      quantity++;
-      cardQty.textContent = quantity; 
-   });
-   decreaseBtn.addEventListener('click', function() {
-      if (quantity > 1) { 
+   
+   function updateQuantity(action) {
+      if (action === 'increase') {
+         quantity++;
+      } else if (action === 'decrease' && quantity > 1) {
          quantity--;
-         cardQty.textContent = quantity; 
       }
+      cardQty.textContent = quantity; 
+   }
+
+   increaseBtn.addEventListener('click', function() {
+         updateQuantity('increase');
+   });
+   
+   decreaseBtn.addEventListener('click', function() {
+         updateQuantity('decrease');
    });
 
+   //кнопки в карточках слайдера
+   const buttonsHeart = Array.from(document.querySelectorAll('.product-slide__btn--heart'));
+   const buttonsBasket = Array.from(document.querySelectorAll('.product-slide__btn--basket'));
+   const qtyHeartDisplay = document.querySelector('.page-header__qty');
+   const qtyBasketDisplay = document.querySelector('.page-header__qty2');
+   const svgHeart = document.querySelector('.page-header__nav--heart');
+   const svgBasket = document.querySelector('.page-header__nav--basket');
 
-   const buttons = Array.from(document.querySelectorAll('.product-slide__btn--heart'));
-   const buttons2 = Array.from(document.querySelectorAll('.product-slide__btn--basket'));
-   const qtyDisplay = document.querySelector('.page-header__qty');
-   const qtyDisplay2 = document.querySelector('.page-header__qty2');
-   const svg = document.querySelector('.page-header__nav--heart');
-   const svg2 = document.querySelector('.page-header__nav--basket');
-   let counter = 0;
-   let counter2 = 0;
-   const updateQtyDisplay = () => {
-      qtyDisplay.style.display = counter > 0 ? 'inline' : 'none';
+   let counters = {
+      heart: 0,
+      basket: 0
    };
 
-   const updateQtyDisplay2 = () => {
-      qtyDisplay2.style.display = counter2 > 0 ? 'inline' : 'none';
+   const updateQtyDisplay = (counter, display) => {
+   display.textContent = counter;
+   display.style.display = counter > 0 ? 'inline' : 'none';
    };
 
-   buttons.forEach(button => {
-      button.addEventListener('click', function() {
-         if (button.classList.contains('active')) {
-            counter--;
-            button.classList.remove('active');
-         } else {
-            counter++; 
-            button.classList.add('active');
-         }
-         qtyDisplay.textContent = counter;
-         if (svg) {
-            svg.style.fill = counter > 0 ? '#1066d0' : 'transparent';
-            svg.style.color = counter > 0 ? '#1066d0' : '#111';
-         }
-         updateQtyDisplay();
-      });
-   });
-      
-   buttons.forEach(button => {
-      button.addEventListener('click', function() {
-         let svg = this.querySelector('.product-slide__icon1');
-         if (svg) {
-            let fill = svg.getAttribute('fill');
-            svg.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
-            svg.style.color = counter > 0 ? '#1066d0' : '#111';
-         }
-      });
-   });
+   const updateSvgColor = (svg, counter) => {
+      if (svg) {
+         svg.style.fill = counter > 0 ? '#1066d0' : 'transparent';
+         svg.style.color = counter > 0 ? '#1066d0' : '#111';
+      }
+   };
 
-   buttons2.forEach(button => {
+   const handleButtonClick = (button, counterType, qtyDisplay, svg, iconClass) => {
       button.addEventListener('click', function() {
          if (button.classList.contains('active')) {
-            counter2--;
+            counters[counterType]--;
             button.classList.remove('active');
          } else {
-            counter2++;
+            counters[counterType]++;
             button.classList.add('active');
          }
-         qtyDisplay2.textContent = counter2;
-         if (svg2) {
-            svg2.style.fill = counter2 > 0 ? '#1066d0' : 'transparent';
-            svg2.style.color = counter2 > 0 ? '#1066d0' : '#111';
-         }
-         updateQtyDisplay2();
-      });
-   });
-   buttons2.forEach(button => {
-      button.addEventListener('click', function() {
-         let svg2 = this.querySelector('.product-slide__icon2');
-         if (svg2) {
-            let fill = svg2.getAttribute('fill');
-            svg2.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
-            svg2.style.color = counter2 > 0 ? '#1066d0' : '#111';
+         updateQtyDisplay(counters[counterType], qtyDisplay);
+         updateSvgColor(svg, counters[counterType]);
+
+         const icon = button.querySelector(iconClass);
+         if (icon) {
+            const fill = icon.getAttribute('fill');
+            icon.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
+            icon.style.color = counters[counterType] > 0 ? '#1066d0' : '#111';
          }
       });
-   });
-   updateQtyDisplay();
-   updateQtyDisplay2();
+   };
+
+   buttonsHeart.forEach(button => handleButtonClick(button, 'heart', qtyHeartDisplay, svgHeart, '.product-slide__icon1'));
+   buttonsBasket.forEach(button => handleButtonClick(button, 'basket', qtyBasketDisplay, svgBasket, '.product-slide__icon2'));
+
+   updateQtyDisplay(counters.heart, qtyHeartDisplay);
+   updateQtyDisplay(counters.basket, qtyBasketDisplay);
+   updateSvgColor(svgHeart, counters.heart);
+   updateSvgColor(svgBasket, counters.basket);
 
    $('.product__breadcrumbs-btn').on('click', function() {
       window.location.href = 'index.html';

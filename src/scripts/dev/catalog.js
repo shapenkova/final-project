@@ -95,79 +95,52 @@
       });
    }
 
-   let buttons = Array.from(document.querySelectorAll('.catalog-card__btn--heart'));
-   let buttons2 = Array.from(document.querySelectorAll('.catalog-card__btn--basket'));
-   const qtyDisplay = document.querySelector('.page-header__qty');
-   const qtyDisplay2 = document.querySelector('.page-header__qty2');
-   let counter = 0;
-   let counter2 = 0;
-   const updateQtyDisplay = () => {
+   let buttonsHeart = Array.from(document.querySelectorAll('.catalog-card__btn--heart'));
+   let buttonsBasket = Array.from(document.querySelectorAll('.catalog-card__btn--basket'));
+   const qtyDisplayHeart = document.querySelector('.page-header__qty');
+   const qtyDisplayBasket = document.querySelector('.page-header__qty2');
+   let counterHeart = 0;
+   let counterBasket = 0;
+
+   // Функция обновления текстового и визуального содержания счетчика
+   const updateQtyDisplay = (qtyDisplay, counter, navSelector) => {
       qtyDisplay.style.display = counter > 0 ? 'inline' : 'none';
+      qtyDisplay.textContent = counter;
+
+      let svg = document.querySelector(navSelector);
+      if (svg) {
+         svg.style.fill = counter > 0 ? '#1066d0' : 'transparent';
+         svg.style.color = counter > 0 ? '#1066d0' : '#111';
+      }
    };
 
-   const updateQtyDisplay2 = () => {
-      qtyDisplay2.style.display = counter2 > 0 ? 'inline' : 'none';
+   // Функция обработки кликов по кнопкам
+   const handleButtonClick = (buttons, counter, qtyDisplay, navSelector, iconClass) => {
+      buttons.forEach(button => {
+         button.addEventListener('click', function() {
+            if (button.classList.contains('active')) {
+               counter--;
+               button.classList.remove('active');
+            } else {
+               counter++;
+               button.classList.add('active');
+            }
+            updateQtyDisplay(qtyDisplay, counter, navSelector);
+
+            let svg = this.querySelector(iconClass);
+            if (svg) {
+               let fill = svg.getAttribute('fill');
+               svg.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
+               svg.style.color = counter > 0 ? '#1066d0' : '#111';
+            }
+         });
+      });
+
+      // Изначальное обновление отображения счетчика
+      updateQtyDisplay(qtyDisplay, counter, navSelector);
    };
 
-   buttons.forEach(button => {
-      button.addEventListener('click', function() {
-         if (button.classList.contains('active')) {
-            counter--;
-            button.classList.remove('active');
-         } else {
-            counter++; 
-            button.classList.add('active');
-         }
-         qtyDisplay.textContent = counter;
-         let svg = document.querySelector('.page-header__nav--heart');
-         if (svg) {
-            svg.style.fill = counter > 0 ? '#1066d0' : 'transparent';
-            svg.style.color = counter > 0 ? '#1066d0' : '#111';
-         }
-         updateQtyDisplay();
-      });
-   });
-      
-   buttons.forEach(button => {
-      button.addEventListener('click', function() {
-         let svg = this.querySelector('.catalog-card__icon1');
-         if (svg) {
-            let fill = svg.getAttribute('fill');
-            svg.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
-            svg.style.color = counter > 0 ? '#1066d0' : '#111';
-         }
-      });
-   });
-
-   buttons2.forEach(button => {
-      button.addEventListener('click', function() {
-         if (button.classList.contains('active')) {
-            counter2--;
-            button.classList.remove('active');
-         } else {
-            counter2++;
-            button.classList.add('active');
-         }
-         qtyDisplay2.textContent = counter2;
-         let svg2 = document.querySelector('.page-header__nav--basket');
-         if (svg2) {
-            svg2.style.fill = counter2 > 0 ? '#1066d0' : 'transparent';
-            svg2.style.color = counter2 > 0 ? '#1066d0' : '#111';
-         }
-         updateQtyDisplay2();
-      });
-   });
-   buttons2.forEach(button => {
-      button.addEventListener('click', function() {
-         let svg2 = this.querySelector('.catalog-card__icon2');
-         if (svg2) {
-            let fill = svg2.getAttribute('fill');
-            svg2.setAttribute('fill', fill === 'transparent' ? '#1066d0' : 'transparent');
-            svg2.style.color = counter2 > 0 ? '#1066d0' : '#111';
-         }
-      });
-   });
-   updateQtyDisplay();
-   updateQtyDisplay2();
-
+   // Установка обработчиков событий для всех кнопок
+   handleButtonClick(buttonsHeart, counterHeart, qtyDisplayHeart, '.page-header__nav--heart', '.catalog-card__icon1');
+   handleButtonClick(buttonsBasket, counterBasket, qtyDisplayBasket, '.page-header__nav--basket', '.catalog-card__icon2');
 })()

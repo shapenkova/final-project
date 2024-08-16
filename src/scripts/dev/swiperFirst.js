@@ -25,16 +25,25 @@
             slideChange: function () {
                let year = document.querySelector('.collection__button-year');
                let currentSlideIndex = this.activeIndex;
-               if (currentSlideIndex === 0) {
-                  year.textContent = '1982'; 
-               } else if (currentSlideIndex === 1) {
-                  year.textContent = '1985'; 
-               } else if (currentSlideIndex === 2) {
-                  year.textContent = '1987'; 
-               } else if (currentSlideIndex === 3) {
-                  year.textContent = '1988'; 
-               } else if (currentSlideIndex === 4) {
-                  year.textContent = '1989';
+               switch (currentSlideIndex) {
+                  case 0:
+                     year.textContent = '1982';
+                     break;
+                  case 1:
+                     year.textContent = '1985';
+                     break;
+                  case 2:
+                     year.textContent = '1987';
+                     break;
+                  case 3:
+                     year.textContent = '1988';
+                     break;
+                  case 4:
+                     year.textContent = '1989';
+                     break;
+                  default:
+                     year.textContent = '';
+                     break;
                }
             }
          }

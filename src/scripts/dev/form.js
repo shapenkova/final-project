@@ -26,9 +26,9 @@
    $.get('ajax.html', function(data) {
       $('#ajax').append(data).selectric({
          maxHeight: 200
-      }
-      );
+      });
    });
+
    $('.js-selectric').on('selectric-init', function() {
       const scrollElement = $('.selectric-scroll')[0];
       if (scrollElement) {
@@ -36,17 +36,17 @@
       }
    }).selectric('refresh');
    
-   $('.custom-select select').on('selectric-open', function() {
-      $(this).closest('.selectric-wrapper').addClass('open3');
-   });
-   $('.custom-select select').on('selectric-close', function() {
-      $(this).closest('.selectric-wrapper').removeClass('open3');
-   });
-   $('select').on('selectric-open', function() {
-      $(this).closest('.selectric-wrapper').addClass('open4');
-   }).on('selectric-close', function() {
-      $(this).closest('.selectric-wrapper').removeClass('open4');
-   });
+
+   function handleSelectricEvents(className, element) {
+      $(element).on('selectric-open', function() {
+         $(this).closest('.selectric-wrapper').addClass(className);
+      }).on('selectric-close', function() {
+         $(this).closest('.selectric-wrapper').removeClass(className);
+      });
+   }
+   
+   handleSelectricEvents('open3', '.custom-select select');
+   handleSelectricEvents('open4', 'select');
 
    //календарь
    const dateField = $(".js-dateField");

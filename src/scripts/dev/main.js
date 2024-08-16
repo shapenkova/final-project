@@ -265,47 +265,31 @@
    const elem2 = $('.page-header__nav--basket');
    const elem3 = $('.page-header__nav--user');
 
-   elem1.on('click', function() {
-      if (elem1) {
-         elem1.css('fill', '#1066d0');
-         elem1.css('color', '#1066d0');
-      }  else {
-         elem1.css('fill', 'transparent');
-         elem1.css('color', '#111');
-      }
-   });
-   elem2.on('click', function() {
-      if (elem2) {
-         elem2.css('fill', '#1066d0');
-         elem2.css('color', '#1066d0');
-      } else {
-         elem2.css('fill', 'transparent');
-         elem2.css('color', '#111');
-      }
-   });
-   elem3.on('click', function() {
-      if (elem3) {
-         elem3.css('fill', '#1066d0');
-         elem3.css('color', '#1066d0');
-      } else {
-         elem3.css('fill', 'transparent');
-         elem3.css('color', '#111');
-      }
-   });
+   function handleClick(element) {
+      element.on('click', function() {
+         if (element) {
+            element.css('fill', '#1066d0');
+            element.css('color', '#1066d0');
+         } else {
+            element.css('fill', 'transparent');
+            element.css('color', '#111');
+         }
+      });
+   }
 
-   $('.page-header__catalog').on('click', function() {
-      window.location.href = 'catalog.html'; 
-   });
+   handleClick(elem1);
+   handleClick(elem2);
+   handleClick(elem3);
 
-   
-   $('#readArticle').on('click', function() {
-      window.location.href = 'haring.html'; 
-   });
+   function addClickHandler (selector, url) {
+      $(selector).on('click', function() {
+         window.location.href = url;
+      });
+   }
 
-   $('.breadcrumbs__btn').on('click', function() {
-      window.location.href = 'index.html';
-   });
+   addClickHandler('.page-header__catalog', 'catalog.html');
+   addClickHandler('#readArticle', 'haring.html');
+   addClickHandler('.breadcrumbs__btn', 'index.html')
 
 
-   
 }) ();
