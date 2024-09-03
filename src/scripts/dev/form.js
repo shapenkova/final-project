@@ -23,12 +23,18 @@
       });
    } 
 
-   $.get('ajax.html', function(data) {
-      $('#ajax').append(data).selectric({
-         maxHeight: 200
+   
+   $.getJSON("json/countries.json", function (data) {
+      let items = [];
+      $.each(data, function (key, value) {
+         items.push("<option value='" + value + "'>" + value + "</option>");
       });
-   });
 
+      $('#ajax').append(items).selectric({
+         maxHeight: 200
+      }); 
+   });
+   
    $('.js-selectric').on('selectric-init', function() {
       const scrollElement = $('.selectric-scroll')[0];
       if (scrollElement) {
@@ -36,6 +42,7 @@
       }
    }).selectric('refresh');
    
+   $('#ajax').val('Россия').selectric('refresh');
 
    function handleSelectricEvents(className, element) {
       $(element).on('selectric-open', function() {

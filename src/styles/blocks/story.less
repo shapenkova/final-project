@@ -28,9 +28,11 @@
       }
       @media @bw1020 {
          grid-template-columns: 1fr 436px;
+         gap: 0 20px;
       }
       @media @bw600 {
          grid-template-columns: 1fr;
+         gap: 0;
          grid-template-areas:
          'text'
          'picture'
@@ -44,7 +46,7 @@
    &__block {
       grid-area: picture;
    }
-   &__button {
+   &__link-read {
       position: absolute;
       top: -19vw;
       left: 16.8vw;

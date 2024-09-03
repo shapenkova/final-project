@@ -288,8 +288,6 @@
    }
 
    addClickHandler('.page-header__catalog', 'catalog.html');
-   addClickHandler('#readArticle', 'haring.html');
    addClickHandler('.breadcrumbs__btn', 'index.html')
-
 
 }) ();

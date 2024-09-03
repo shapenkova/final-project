@@ -103,6 +103,13 @@
       box-sizing: border-box;
       display: flex;
       justify-content: space-between;
+      gap: 200px;
+      @media @bw1020 {
+         gap: 85px;
+      }
+      @media @bw768 {
+         gap: 65px;
+      }
    }
    &__info {
       display: flex;
