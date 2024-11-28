@@ -58,3 +58,43 @@ img {
    height: auto;
    object-fit: cover;
 }
+#cursor, 
+#aura {
+   position: absolute;
+   border-radius: 100%;
+   transition: 0.5s cubic-bezier(0.75, -1.75, 0.3,2.33) transform, 0.2s cubic-bezier(0.75,-1.27,0.3,2.33) opacity;
+   user-select: none;
+   pointer-events: none;
+   z-index: 100000;
+}
+#cursor {
+   width: 8px;
+   height: 8px;
+   background-color: rgba(122, 122, 122);
+   transform: scale(1);
+   &.activeCursor {
+      opacity: 0;
+      transform: scale(0);
+   }
+}
+#aura {
+   width: 46px;
+   height: 46px;
+   border: 1px solid rgba(122, 122, 122, 0.47);
+   background-color: rgba(206, 203, 203, 0.801);
+   transform: translate(5px, 5px);
+   &.activeCursor {
+      border: 1px solid rgba(122, 122, 122, 0.588);
+      transform: matrix(1.2);
+   }
+}
+* {
+   cursor: none;
+}
+
+#cursor.hiddenCursor {
+   transform: scale(0.001);
+}
+#aura.hiddenCursor {
+   transform: scale(0.001);
+}

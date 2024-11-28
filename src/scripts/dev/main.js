@@ -290,4 +290,63 @@
    addClickHandler('.page-header__catalog', 'catalog.html');
    addClickHandler('.breadcrumbs__btn', 'index.html')
 
+   //курсор
+   const cursor = document.getElementById('cursor');
+   const follower = document.getElementById('aura');
+   const links = document.getElementsByTagName('a');
+
+   console.log(links);
+   let mouseX = 0, mouseY = 0;
+   let posX = 0, posY = 0;
+
+   const body = document.body;
+   body.addEventListener('mousemove', e => {
+
+      mouseCoords(e)
+
+      cursor.classList.remove('hiddenCursor');
+      follower.classList.remove('hiddenCursor');
+   })
+   function mouseCoords(e) {
+      mouseX = e.pageX;
+      mouseY = e.pageY;
+   }
+
+   gsap.to({}, 0.1, {
+      repeat: -1,
+
+      onRepeat: () => {
+         posX += (mouseX - posX) / 5;
+         posY += (mouseY - posY) / 5;
+
+         gsap.set(cursor, {
+            css: {
+               left: mouseX,
+               top: mouseY
+            }
+         })
+
+         gsap.set(follower, {
+            css: {
+               left: posX - 24,
+               top: posY - 24
+            }
+         })
+      }
+   }) 
+
+   for(let i = 0; i < links.length; i++){
+      links[i].addEventListener('mouseover', () => {
+         cursor.classList.add('activeCursor');
+         follower.classList.add('activeCursor');
+      });
+      links[i].addEventListener('mouseout', () => {
+         cursor.classList.remove('activeCursor');
+         follower.classList.remove('activeCursor');
+      });
+   }
+   body.addEventListener('mouseout', () => {
+      cursor.classList.add('hiddenCursor');
+      follower.classList.add('hiddenCursor');
+   })
 }) ();
